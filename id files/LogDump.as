@@ -9,6 +9,11 @@ import com.Utils.LDBFormat;
 import com.fox.DoubleAgent.App;
 import mx.utils.Delegate;
 
+
+// Replaces the main.as in project files
+// "Done" will be printed out in the system channel once done
+// Afterwards run ExtractFromClientlog.py and then jsonToXML.py
+// json files are for processing the data and .xml files are needed by the mod
 class com.fox.DoubleAgent.Main {
 	private static var s_app:App;
 	static var SharedID:Array;
@@ -26,7 +31,9 @@ class com.fox.DoubleAgent.Main {
 
 	public static function OnLoad() {
 		//s_app.onLoad();
-		//if you dont login befoe this timer you will crash
+		
+		//Starts 30s after launching the game,you have to login before the timer expires
+		//Alternatively remove "GMF_PRELOAD" flag from modules.xml and remove the setTimeout part
 		setTimeout(Delegate.create(Main, Importer), 30000);
 	}
 
