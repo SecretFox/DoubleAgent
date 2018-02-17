@@ -21,11 +21,12 @@ class com.fox.DoubleAgent.Infiltrate {
 		m_Content = InjectionClip.m_Content;
 		m_QuestID = m_Content.m_QuestID;
 
-		//illuminati logo has some transparent pixels that make clicking it harder
+		
 		if (!m_Content.m_LogoIlluminati) {
 			m_LogoIlluminati = m_Content.createEmptyMovieClip("m_LogoIlluminati", m_Content.getNextHighestDepth());
 			m_LogoIlluminati._x = m_Content.m_BonusCashReward._x;
 			m_LogoIlluminati._y = m_Content.m_BonusCashReward._y + 24;
+			//illuminati logo has some transparent pixels that make clicking it harder
 			m_LogoIlluminati.beginFill(0xFFFFFF, 0);
 			m_LogoIlluminati.moveTo(0, 0);
 			m_LogoIlluminati.lineTo(20, 0);
@@ -35,7 +36,7 @@ class com.fox.DoubleAgent.Infiltrate {
 			m_LogoIlluminati.endFill();
 			m_LogoIlluminati.attachMovie("LogoIlluminati", "m_LogoIlluminati", m_LogoIlluminati.getNextHighestDepth(), {_width:20, _height:20});
 
-			//These look bit awful with so small scaling
+			//These look awful when scaled so much
 			//Changing the border alpha helps with it
 			m_LogoTemplar = m_Content.attachMovie("LogoTemplar", "m_LogoTemplar", m_Content.getNextHighestDepth(), {_x:m_Content.m_BonusCashReward._x + 25, _y:m_Content.m_BonusCashReward._y + 24, _width:23, _height:23});
 			prettify(m_LogoTemplar,0);
@@ -55,13 +56,13 @@ class com.fox.DoubleAgent.Infiltrate {
 			m_InjectionClip.SignalClose.Connect(Close, this);
 		}
 		if (m_Content.m_DescDragon){
-			UtilsBase.PrintChatText("<font color=item_red>DoubleAgent: Please delete   \"/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues</font>");
-			Chat.SignalShowFIFOMessage.Emit("DoubleAgent: Please delete \"/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues", 0);
+			UtilsBase.PrintChatText("<font color=item_red>DoubleAgent: Please delete \"Custom/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues</font>");
+			Chat.SignalShowFIFOMessage.Emit("DoubleAgent: Please delete \"Custom/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues", 0);
 		}
 	}
 
 	private function prettify(logo,alpha) {
-		//finds the biggest element and changes its alpha
+		//finds the biggest shape in movieclip and changes its alpha
 		var highest:Number = 0;
 		var clip:MovieClip;
 		for (var part in logo) {
@@ -92,7 +93,7 @@ class com.fox.DoubleAgent.Infiltrate {
 		var Content = m_InjectionClip.m_Content;
 		var text = LDBFormat.LDBGetText(LDBString, Number(m_QuestID));
 		// if(!text)text = LDBFormat.LDBGetText("QuestTaskSolved", m_QuestID)
-		// if the description is shared it is the same for all factions
+		// if the text is not found it's shared report,no need to change it in that case
 		if (text) {
 			m_Content.m_MissionDescription.text = text;
 			//Forces window to resize

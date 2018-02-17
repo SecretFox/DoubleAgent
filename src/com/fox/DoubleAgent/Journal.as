@@ -1,7 +1,6 @@
 import com.GameInterface.DistributedValue;
 import com.GameInterface.Game.Character;
 import com.GameInterface.Quest;
-import com.GameInterface.Quests;
 import com.GameInterface.QuestsBase;
 import com.GameInterface.UtilsBase;
 import com.Utils.Archive;
@@ -88,24 +87,6 @@ class com.fox.DoubleAgent.Journal {
 		}
 	}
 
-	private function GetMissionObject(id:Number):Quest {
-		var m_MainQuestID = Quests.GetMainQuestIDByQuestID(id);
-		var completedQuests:Array = Quests.GetAllCompletedQuests();
-		for (var i:Number = 0; i < completedQuests.length; i++ ) {
-			if (completedQuests[i].m_ID == m_MainQuestID) {
-				return completedQuests[i];
-			}
-		}
-
-		var activeQuests:Array = Quests.GetAllActiveQuests();
-		for (var i:Number = 0; i < activeQuests.length; i++ ) {
-			if (activeQuests[i].m_ID == m_MainQuestID) {
-				return activeQuests[i];
-			}
-		}
-		return null;
-	}
-
 	private function GetData() {
 		SlotMissionWindowClosed(TaskID)
 		TaskID = undefined;
@@ -163,8 +144,8 @@ class com.fox.DoubleAgent.Journal {
 	}
 
 	private function UpdatePaused(TierID) {
-		//for some reason missionreward window fails to fetch questSolved text for paused missions
-		//Strangely enough it works for completed and active ones just fine
+		// for some reason missionreward window fails to fetch quest solved text for paused missions
+		// strangely enough it works for completed and active ones just fine
 		for (var i:Number = 0 ; i <m_RewardW.length; i++) {
 			if (m_RewardW[i].GetContent().GetID() == TierID || TierID == -1) {
 				var m_Character = Character.GetClientCharacter();
