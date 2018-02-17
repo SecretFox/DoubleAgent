@@ -46,6 +46,8 @@ class com.fox.DoubleAgent.App{
 		m_Journal = DistributedValue.Create("mission_journal_window");
 		m_Journal.SignalChanged.Connect(SlotJournalOpened, this);
 		SlotJournalOpened();
+		//saving the values to DV so that they don't get unloaded on reloadui/character change
+		//mod is set to Preload so that the initial loading will happen on character selection
 		if (!m_FactionArchieve.GetValue()){
 			LoadData("Faction");
 		}

@@ -61,7 +61,7 @@ class com.fox.DoubleAgent.Infiltrate {
 	}
 
 	private function prettify(logo,alpha) {
-		//finds the biggest element
+		//finds the biggest element and changes its alpha
 		var highest:Number = 0;
 		var clip:MovieClip;
 		for (var part in logo) {
@@ -90,14 +90,12 @@ class com.fox.DoubleAgent.Infiltrate {
 
 	private function ChangeDescription(LDBString:String) {
 		var Content = m_InjectionClip.m_Content;
-		//using this to resize window later
-		var oldSize = m_Content.m_MissionDescription._height;
-
 		var text = LDBFormat.LDBGetText(LDBString, Number(m_QuestID));
-		//if(!text)text = LDBFormat.LDBGetText("QuestTaskSolved", m_QuestID)
+		// if(!text)text = LDBFormat.LDBGetText("QuestTaskSolved", m_QuestID)
+		// if the description is shared it is the same for all factions
 		if (text) {
 			m_Content.m_MissionDescription.text = text;
-			//Resizing the elements
+			//Forces window to resize
 			m_InjectionClip.SetSize( 610, 250 );
 		}
 

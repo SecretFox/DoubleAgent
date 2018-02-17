@@ -49,7 +49,6 @@ class com.fox.DoubleAgent.Journal {
 		m_text.text  = "View Report";
 
 		DoubleAgentContainer.onPress = Delegate.create(this, GetData);
-		var empty:Boolean = true;
 	}
 
 	private function ValidateQuestTierPair(QuestID,TaskID) {
@@ -164,6 +163,8 @@ class com.fox.DoubleAgent.Journal {
 	}
 
 	private function UpdatePaused(TierID) {
+		//for some reason missionreward window fails to fetch questSolved text for paused missions
+		//Strangely enough it works for completed and active ones just fine
 		for (var i:Number = 0 ; i <m_RewardW.length; i++) {
 			if (m_RewardW[i].GetContent().GetID() == TierID || TierID == -1) {
 				var m_Character = Character.GetClientCharacter();
