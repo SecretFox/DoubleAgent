@@ -86,7 +86,7 @@ class com.fox.DoubleAgent.Main {
 		if (LumieID.length>0){
 			var task = LumieID.pop();
 			var questID = QuestsBase.GetMainQuestIDByQuestID(task);
-			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolved", task));;
+			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", task));;
 			var QuestName = QuestsBase.GetQuest(questID, false, true).m_MissionName;
 			if (!QuestName) QuestName = QuestsBase.GetQuest(questID, false, false).m_MissionName;
 			if(QuestName && solvedText){
@@ -105,7 +105,7 @@ class com.fox.DoubleAgent.Main {
 		if (TemplarID.length>0){
 			var task = TemplarID.pop();
 			var questID = QuestsBase.GetMainQuestIDByQuestID(task);
-			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolved", task));;
+			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolvedTemplar", task));;
 			var QuestName = QuestsBase.GetQuest(questID, false, true).m_MissionName;
 			if (!QuestName) QuestName = QuestsBase.GetQuest(questID, false, false).m_MissionName;
 			if(QuestName && solvedText){
@@ -124,7 +124,7 @@ class com.fox.DoubleAgent.Main {
 		if (DragonID.length>0){
 			var task = DragonID.pop();
 			var questID = QuestsBase.GetMainQuestIDByQuestID(task);
-			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolved", task));;
+			var solvedText = Replace(LDBFormat.LDBGetText("QuestTaskSolvedDragon", task));;
 			var QuestName = QuestsBase.GetQuest(questID, false, true).m_MissionName;
 			if (!QuestName) QuestName = QuestsBase.GetQuest(questID, false, false).m_MissionName;
 			if(QuestName && solvedText){

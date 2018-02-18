@@ -1,3 +1,5 @@
+import com.Components.WinComp;
+import com.Components.WindowComponentContent;
 import com.GameInterface.DistributedValue;
 import com.GameInterface.Game.Character;
 import com.GameInterface.Quest;
@@ -6,24 +8,22 @@ import com.GameInterface.UtilsBase;
 import com.Utils.Archive;
 import com.Utils.Colors;
 import com.Utils.LDBFormat;
-import com.fox.DoubleAgent.Infiltrate;
+import com.fox.DoubleAgent.InjectedReport;
 import mx.utils.Delegate;
 /**
  * ...
  * @author fox
  */
-class com.fox.DoubleAgent.Journal {
-	private var m_RewardW:MovieClip;
+class com.fox.DoubleAgent.InjectedJournal {
 	private var m_Journal:MovieClip;
-	private var TaskID:Number;
+	static var TaskID:Number;
 	private var m_FactionArchieve:DistributedValue;
 	private var m_SharedArchieve:DistributedValue;
 
-	public function Journal(JournalClip:MovieClip) {
+	public function InjectedJournal(JournalClip:MovieClip) {
 		m_FactionArchieve = DistributedValue.Create("DoubleAgent_Faction");
 		m_SharedArchieve = DistributedValue.Create("DoubleAgent_Shared");
 		m_Journal = JournalClip;
-		m_RewardW = _root.missionrewardcontroller.m_RewardWindows;
 		var Window:MovieClip = m_Journal.m_Window;
 		var title:TextField = Window.m_Title;
 		title.autoSize = true;
@@ -54,41 +54,8 @@ class com.fox.DoubleAgent.Journal {
 		return QuestsBase.GetMainQuestIDByQuestID(TaskID) == QuestID?true:false;
 	}
 
-	private function BringToFront(clip:MovieClip) {
-		var clipDepth:Number = clip.getDepth();
-		var highestDepth:Number = clipDepth;
-		var frontClip:MovieClip
-
-		for (var i:Number = 0; i <m_RewardW.length; i++ ) {
-			if (m_RewardW[i].getDepth() > highestDepth) {
-				frontClip =m_RewardW[i];
-				highestDepth = frontClip.getDepth();
-			}
-		}
-
-		if (highestDepth > clipDepth) {
-			frontClip.ShowStroke( false );
-			clip.ShowStroke( true );
-			clip.swapDepths( frontClip );
-		}
-	}
-	
-	private function SlotMissionWindowClosed(rewardId:Number) {
-		for (var i:Number = 0 ; i <m_RewardW.length; i++) {
-			if (m_RewardW[i].GetContent().GetID() == rewardId || rewardId == -1) {
-				m_RewardW[i].removeMovieClip();
-				m_RewardW.splice(i, 1);
-			}
-			m_RewardW[i].ShowStroke( false );
-		}
-
-		if (m_RewardW.length == 0 && rewardId != -1) {
-			GUI.Mission.MissionSignals.SignalMissionReportWindowClosed.Emit();
-		}
-	}
-
 	private function GetData() {
-		SlotMissionWindowClosed(TaskID)
+		_root.missionrewardcontroller.SlotMissionWindowClosed(TaskID)
 		TaskID = undefined;
 		var QuestID = m_Journal.m_Window.m_Content.m_ExpandedMissionID;
 		FindTaskID(QuestID);
@@ -101,7 +68,7 @@ class com.fox.DoubleAgent.Journal {
 		var sharedData:Archive = m_SharedArchieve.GetValue();
 		var task_ID = factionData.FindEntry(string(QuestID));
 		if (!task_ID || !ValidateQuestTierPair(QuestID, task_ID)) {
-			task_ID = sharedData.FindEntry(string(QuestID));
+			task_ID = Number(sharedData.FindEntry(string(QuestID)));
 		}
 		if (task_ID && ValidateQuestTierPair(QuestID, task_ID)) {
 			TaskID = Number(task_ID);
@@ -138,20 +105,20 @@ class com.fox.DoubleAgent.Journal {
 	}
 
 	private function InfiltrateReports() {
-		for (var i in m_RewardW) {
-			var Injected = new Infiltrate(m_RewardW[i]);
+		for (var i in _root.missionrewardcontroller.m_RewardWindows) {
+			var Injected = new InjectedReport(_root.missionrewardcontroller.m_RewardWindows[i]);
 		}
 	}
 
 	private function UpdatePaused(TierID) {
 		// for some reason missionreward window fails to fetch quest solved text for paused missions
 		// strangely enough it works for completed and active ones just fine
-		for (var i:Number = 0 ; i <m_RewardW.length; i++) {
-			if (m_RewardW[i].GetContent().GetID() == TierID || TierID == -1) {
+		for (var i:Number = 0 ; i <_root.missionrewardcontroller.m_RewardWindows.length; i++) {
+			if (_root.missionrewardcontroller.m_RewardWindows[i].GetContent().GetID() == TierID || TierID == -1) {
 				var m_Character = Character.GetClientCharacter();
 				var m_Faction  = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
 				var text
-				var oldSize = m_RewardW[i].m_Content.m_MissionDescription._height;
+				var oldSize = _root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription._height;
 				switch (m_Faction) {
 					case _global.Enums.Factions.e_FactionDragon:
 						text = LDBFormat.LDBGetText("QuestTaskSolvedDragon", Number(TierID));
@@ -163,22 +130,22 @@ class com.fox.DoubleAgent.Journal {
 						text = LDBFormat.LDBGetText("QuestTaskSolvedTemplar", Number(TierID));
 						break
 				}
-				m_RewardW[i].m_Content.m_MissionDescription.text = text;
+				_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text = text;
 				var qID = QuestsBase.GetMainQuestIDByQuestID(TaskID);
 				var name =  QuestsBase.GetQuest(qID, false, true).m_MissionName;
 				if (!name) name =  QuestsBase.GetQuest(qID, false, false).m_MissionName;
-				m_RewardW[i].m_Content.m_SubjectText.text = name;
-				m_RewardW[i].SetSize( 610, 250 );
+				_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_SubjectText.text = name;
+				_root.missionrewardcontroller.m_RewardWindows[i].SetSize( 610, 250 );
 			}
 		}
 	}
 
 	private function CreateReportWindow(data) {
 		if (data.m_QuestTaskID) {
-			var missionReward:com.Components.WinComp = _root.missionrewardcontroller.attachMovie( "MissionRewardWindowComponent", "m_RewardWindow_DoubleAgent", _root.missionrewardcontroller.getNextHighestDepth());
+			var missionReward:WinComp = _root.missionrewardcontroller.attachMovie( "MissionRewardWindowComponent", "m_RewardWindow_DoubleAgent", _root.missionrewardcontroller.getNextHighestDepth());
 			missionReward.SetContent( "MissionRewardWindow" );
-			missionReward.SignalClose.Connect( SlotMissionWindowClosed, this );
-			missionReward.SignalSelected.Connect( BringToFront, this );
+			missionReward.SignalClose.Connect(_root.missionrewardcontroller.SlotMissionWindowClosed, this );
+			missionReward.SignalSelected.Connect( _root.missionrewardcontroller.BringToFront, this );
 			missionReward.ShowResizeButton( true );
 			missionReward.ShowStroke( false );
 			missionReward.SetMinWidth( 400 );
@@ -188,12 +155,12 @@ class com.fox.DoubleAgent.Journal {
 			var centerStageY:Number = (visibleRect.height / 2);
 			missionReward._x = centerStageX - (missionReward._width / 2);
 			missionReward._y = centerStageY - (missionReward._height / 2);
-			var content:com.Components.WindowComponentContent = missionReward.GetContent();
+			var content:WindowComponentContent = missionReward.GetContent();
 			content.SetData(data);
-			content["SignalClose"].Connect( SlotMissionWindowClosed, this);
-			m_RewardW.push(missionReward);
+			content["SignalClose"].Connect( _root.missionrewardcontroller.SlotMissionWindowClosed, this);
+			_root.missionrewardcontroller.m_RewardWindows.push(missionReward);
 			setTimeout(Delegate.create(this, InfiltrateReports), 100);
-			m_RewardW[m_RewardW.length - 1].ShowStroke( true )
+			_root.missionrewardcontroller.m_RewardWindows[_root.missionrewardcontroller.m_RewardWindows.length - 1].ShowStroke( true )
 			var character:Character = Character.GetClientCharacter();
 			if (character != undefined) { character.AddEffectPackage( "sound_fxpackage_GUI_send_report.xml" ); }
 			if (data.paused) UpdatePaused(data.m_QuestTaskID);

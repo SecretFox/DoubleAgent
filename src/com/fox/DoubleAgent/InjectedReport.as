@@ -6,7 +6,7 @@ import com.Utils.LDBFormat;
  * ...
  * @author fox
  */
-class com.fox.DoubleAgent.Infiltrate {
+class com.fox.DoubleAgent.InjectedReport {
 
 	private var m_InjectionClip:MovieClip;
 	private var m_Content:MovieClip
@@ -16,7 +16,7 @@ class com.fox.DoubleAgent.Infiltrate {
 	private var m_LogoDragon:MovieClip;
 	
 
-	public function Infiltrate(InjectionClip:MovieClip) {
+	public function InjectedReport(InjectionClip:MovieClip) {
 		m_InjectionClip = InjectionClip;
 		m_Content = InjectionClip.m_Content;
 		m_QuestID = m_Content.m_QuestID;
