@@ -1,7 +1,3 @@
-/**
- * ...
- * @author fox
- */
 import com.fox.DoubleAgent.App;
 
 class com.fox.DoubleAgent.Main {

@@ -2,10 +2,7 @@ import com.GameInterface.Chat;
 import com.GameInterface.UtilsBase;
 import mx.utils.Delegate;
 import com.Utils.LDBFormat;
-/**
- * ...
- * @author fox
- */
+
 class com.fox.DoubleAgent.InjectedReport {
 
 	private var m_InjectionClip:MovieClip;
@@ -14,14 +11,12 @@ class com.fox.DoubleAgent.InjectedReport {
 	private var m_LogoIlluminati:MovieClip;
 	private var m_LogoTemplar:MovieClip;
 	private var m_LogoDragon:MovieClip;
-	
 
 	public function InjectedReport(InjectionClip:MovieClip) {
 		m_InjectionClip = InjectionClip;
 		m_Content = InjectionClip.m_Content;
 		m_QuestID = m_Content.m_QuestID;
 
-		
 		if (!m_Content.m_LogoIlluminati) {
 			m_LogoIlluminati = m_Content.createEmptyMovieClip("m_LogoIlluminati", m_Content.getNextHighestDepth());
 			m_LogoIlluminati._x = m_Content.m_BonusCashReward._x;
@@ -55,7 +50,7 @@ class com.fox.DoubleAgent.InjectedReport {
 			m_InjectionClip.SignalSizeChanged.Connect(RePosition, this);
 			m_InjectionClip.SignalClose.Connect(Close, this);
 		}
-		if (m_Content.m_DescDragon){
+		if (m_Content.m_DescDragon) {
 			UtilsBase.PrintChatText("<font color=item_red>DoubleAgent: Please delete \"Custom/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues</font>");
 			Chat.SignalShowFIFOMessage.Emit("DoubleAgent: Please delete \"Custom/Flash/MissionRewardController.swf\" file, it is no longer needed and may cause issues", 0);
 		}
@@ -79,7 +74,6 @@ class com.fox.DoubleAgent.InjectedReport {
 		m_InjectionClip.SignalClose.Disconnect(Close, this);
 	}
 
-	
 	private function RePosition() {
 		m_LogoIlluminati._x = m_Content.m_BonusCashReward._x;
 		m_LogoTemplar._x = m_Content.m_BonusCashReward._x+25;

@@ -6,46 +6,42 @@ import com.fox.DoubleAgent.InjectedReport;
 import com.fox.DoubleAgent.InjectedJournal;
 import mx.utils.Delegate;
 import com.GameInterface.Game.Character;
-/**
- * ...
- * @author fox
- */
-class com.fox.DoubleAgent.App{
-	
+
+class com.fox.DoubleAgent.App {
+
 	private var m_SwfRoot:MovieClip;
 	private var m_Journal:DistributedValue;
 	private var m_FactionArchieve:DistributedValue;
 	private var m_SharedArchieve:DistributedValue;
-	private var m_Character:Character;
 	private var Journal:InjectedJournal;
-	
+
 	public function App(root) {
 		m_SwfRoot = root;
 	}
-	
-	public function onLoad(){
+
+	public function onLoad() {
 		m_FactionArchieve = DistributedValue.Create("DoubleAgent_Faction");
 		m_SharedArchieve = DistributedValue.Create("DoubleAgent_Shared");
-		
+
 		GUI.Mission.MissionSignals.SignalMissionReportSent.Connect( SlotMissionReportSent, this );
 		m_Journal = DistributedValue.Create("mission_journal_window");
 		m_Journal.SignalChanged.Connect(SlotJournalOpened, this);
 		SlotJournalOpened();
 		//saving the values to DV so that they don't get unloaded on reloadui/character change
 		//mod is set to Preload so that the initial loading will happen on character selection
-		if (!m_FactionArchieve.GetValue()){
+		if (!m_FactionArchieve.GetValue()) {
 			LoadData("Faction");
 		}
-		if (!m_SharedArchieve.GetValue()){
+		if (!m_SharedArchieve.GetValue()) {
 			LoadData("Shared");
 		}
 	}
-	
-	public function onUnload(){
+
+	public function onUnload() {
 		GUI.Mission.MissionSignals.SignalMissionReportSent.Disconnect( SlotMissionReportSent, this );
 		m_Journal.SignalChanged.Disconnect(SlotJournalOpened, this);
 	}
-	
+
 	private function LoadData(filename:String) {
 		var XMLFile:XML = new XML();
 		XMLFile.ignoreWhite = true;
@@ -63,27 +59,26 @@ class com.fox.DoubleAgent.App{
 		});
 		XMLFile.load("DoubleAgent/"+filename+".xml");
 	}
-	
-	private function SlotJournalOpened(){
-		if (m_Journal.GetValue() && _root.missionjournalwindow.m_Window.m_Content){
+
+	private function SlotJournalOpened() {
+		if (m_Journal.GetValue() && _root.missionjournalwindow.m_Window.m_Content) {
 			setTimeout(Delegate.create(this, InjectJournal), 50);
-		}
-		else if (m_Journal.GetValue()){
+		} else if (m_Journal.GetValue()) {
 			setTimeout(Delegate.create(this, SlotJournalOpened), 100);
 		}
 	}
-	
-	private function InjectJournal(){
+
+	private function InjectJournal() {
 		Journal = new InjectedJournal(_root.missionjournalwindow);
 	}
-	
-	private function SlotMissionReportSent(){
+
+	private function SlotMissionReportSent() {
 		setTimeout(Delegate.create(this, InjectReports), 100);
 	}
-	
-	private function InjectReports(){
+
+	private function InjectReports() {
 		var windows = _root.missionrewardcontroller.m_RewardWindows;
-		for (var i in windows){
+		for (var i in windows) {
 			var Injected = new InjectedReport(windows[i]);
 		}
 	}

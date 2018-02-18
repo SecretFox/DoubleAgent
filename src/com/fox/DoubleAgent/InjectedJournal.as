@@ -10,13 +10,10 @@ import com.Utils.Colors;
 import com.Utils.LDBFormat;
 import com.fox.DoubleAgent.InjectedReport;
 import mx.utils.Delegate;
-/**
- * ...
- * @author fox
- */
+
 class com.fox.DoubleAgent.InjectedJournal {
 	private var m_Journal:MovieClip;
-	static var TaskID:Number;
+	private var TaskID:Number;
 	private var m_FactionArchieve:DistributedValue;
 	private var m_SharedArchieve:DistributedValue;
 
@@ -75,6 +72,9 @@ class com.fox.DoubleAgent.InjectedJournal {
 		}
 	}
 
+	// Usually this data is from Quests.GetAllRewards();
+	// Format for the rewards seems slightly different
+	
 	private function FindData(QuestID) {
 		var data = new Object();
 		data.m_QuestTaskID = TaskID;
@@ -95,6 +95,7 @@ class com.fox.DoubleAgent.InjectedJournal {
 				data.m_Rewards.push(reward[y]);
 			}
 		}
+		//this doesn't work. Maybe becasue i have already completed the quests so i cant get optional rewards?
 		for (var i in temp2) {
 			var reward = temp2[i]
 			for (var y in reward) {
