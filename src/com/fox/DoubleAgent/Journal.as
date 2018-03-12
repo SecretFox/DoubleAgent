@@ -8,116 +8,110 @@ import com.GameInterface.UtilsBase;
 import com.Utils.Archive;
 import com.Utils.Colors;
 import com.Utils.LDBFormat;
-import com.fox.DoubleAgent.InjectedReport;
 import mx.utils.Delegate;
 
-class com.fox.DoubleAgent.InjectedJournal {
-	private var m_Journal:MovieClip;
+class com.fox.DoubleAgent.Journal {
+	private var m_JournalClip:MovieClip;
 	private var TaskID:Number;
 	private var m_FactionArchieve:DistributedValue;
 	private var m_SharedArchieve:DistributedValue;
 
-	public function InjectedJournal(JournalClip:MovieClip) {
+	public function Journal(JournalClip:MovieClip) {
 		m_FactionArchieve = DistributedValue.Create("DoubleAgent_Faction");
 		m_SharedArchieve = DistributedValue.Create("DoubleAgent_Shared");
-		m_Journal = JournalClip;
-		var Window:MovieClip = m_Journal.m_Window;
-		var title:TextField = Window.m_Title;
-		title.autoSize = true;
-		var DoubleAgentContainer:MovieClip = Window.m_Content.createEmptyMovieClip("DoubleAgent", Window.getNextHighestDepth());
-		DoubleAgentContainer._y = -31;
-		DoubleAgentContainer._x = title._x + title._width;
+		m_JournalClip = JournalClip;
+		var m_Window:MovieClip = m_JournalClip.m_Window;
+		var m_Title:TextField = m_Window.m_Title;
+		m_Title.autoSize = true;
+		var m_DoubleAgentClip:MovieClip = m_Window.m_Content.createEmptyMovieClip("DoubleAgent", m_Window.getNextHighestDepth());
+		m_DoubleAgentClip._y = -31;
+		m_DoubleAgentClip._x = m_Title._x + m_Title._width;
 
-		var DoubleAgent0 = DoubleAgentContainer.attachMovie("dot", "ShowReport1", DoubleAgentContainer.getNextHighestDepth(), {_width:16, _height:16});
+		//building honeycomb icon from shapes found in the original swf
+		var DoubleAgent0 = m_DoubleAgentClip.attachMovie("dot", "ShowReport1", m_DoubleAgentClip.getNextHighestDepth(), {_width:16, _height:16});
 		DoubleAgent0._alpha = 10;
-		var DoubleAgent1 = DoubleAgentContainer.attachMovie("ItemStroke_Chakra7", "ShowReport1", DoubleAgentContainer.getNextHighestDepth(), { _width:16, _height:16});
+		var DoubleAgent1 = m_DoubleAgentClip.attachMovie("ItemStroke_Chakra7", "ShowReport1", m_DoubleAgentClip.getNextHighestDepth(), { _width:16, _height:16});
 		Colors.ApplyColor(DoubleAgent1, 0xE9B007);
 		DoubleAgent1._alpha = 35;
-		var DoubleAgent2 = DoubleAgentContainer.attachMovie("ItemPattern_hexa", "ShowReport2", DoubleAgentContainer.getNextHighestDepth(), { _width:16, _height:16});
+		var DoubleAgent2 = m_DoubleAgentClip.attachMovie("ItemPattern_hexa", "ShowReport2", m_DoubleAgentClip.getNextHighestDepth(), { _width:16, _height:16});
 		Colors.ApplyColor(DoubleAgent2, 0xE9B007);
 
-		var m_textField:MovieClip = DoubleAgentContainer.createEmptyMovieClip("Txt", DoubleAgentContainer.getNextHighestDepth());
+		var m_textField:MovieClip = m_DoubleAgentClip.createEmptyMovieClip("Txt", m_DoubleAgentClip.getNextHighestDepth());
 		var m_text:TextField = m_textField.createTextField("Txt", m_textField.getNextHighestDepth(), 20, -1,20,20);
 		m_text.autoSize = 'left';
-		var format:TextFormat = Window.m_Content.m_HeaderNameFormat;
+		var format:TextFormat = m_Window.m_Content.m_HeaderNameFormat;
 		format.size = 12;
 		m_text.setNewTextFormat(format);
 		m_text.text  = "View Report";
-
-		DoubleAgentContainer.onPress = Delegate.create(this, GetData);
+		m_DoubleAgentClip.onPress = Delegate.create(this, ShowReport);
 	}
 
-	private function ValidateQuestTierPair(QuestID,TaskID) {
-		return QuestsBase.GetMainQuestIDByQuestID(TaskID) == QuestID?true:false;
+	//  Returns true if the TaskID belongs to the quest
+	private function ValidateTaskID(QuestID,TaskID) {
+		return QuestsBase.GetMainQuestIDByQuestID(TaskID) == QuestID ? true:false;
 	}
 
-	private function GetData() {
-		_root.missionrewardcontroller.SlotMissionWindowClosed(TaskID)
+	private function ShowReport() {
+		_root.missionrewardcontroller.SlotMissionWindowClosed(TaskID);
 		TaskID = undefined;
-		var QuestID = m_Journal.m_Window.m_Content.m_ExpandedMissionID;
+		var QuestID = m_JournalClip.m_Window.m_Content.m_ExpandedMissionID;
 		FindTaskID(QuestID);
-		var data = FindData(QuestID);
-		CreateReportWindow(data);
+		var rewardObject = ConstructRewardObject(QuestID);
+		CreateReportWindow(rewardObject);
 	}
 
 	private function FindTaskID(QuestID:Number) {
 		var factionData:Archive = m_FactionArchieve.GetValue();
 		var sharedData:Archive = m_SharedArchieve.GetValue();
 		var task_ID = factionData.FindEntry(string(QuestID));
-		if (!task_ID || !ValidateQuestTierPair(QuestID, task_ID)) {
+		if (!task_ID || !ValidateTaskID(QuestID, task_ID)) {
 			task_ID = Number(sharedData.FindEntry(string(QuestID)));
 		}
-		if (task_ID && ValidateQuestTierPair(QuestID, task_ID)) {
+		if (task_ID && ValidateTaskID(QuestID, task_ID)) {
 			TaskID = Number(task_ID);
 		}
 	}
 
 	// Usually this data is from Quests.GetAllRewards();
-	// Format for the rewards seems slightly different
-	
-	private function FindData(QuestID) {
-		var data = new Object();
-		data.m_QuestTaskID = TaskID;
-		data.m_OptionalRewards = new Array();
-		data.m_Rewards = new Array();
-		data.paused = m_Journal.m_Window.m_Content.m_Menu.m_MissionDropdown._selectedIndex == 2?true:false;
+	// Im manually constructing the RewardsObject from quest data
+	private function ConstructRewardObject(QuestID) {
+		var rewardObject = new Object();
+		rewardObject.m_QuestTaskID = TaskID;
+		rewardObject.m_OptionalRewards = new Array();
+		rewardObject.m_Rewards = new Array();
+		rewardObject.paused = m_JournalClip.m_Window.m_Content.m_Menu.m_MissionDropdown._selectedIndex == 2?true:false;
 
 		var quest:Quest = QuestsBase.GetQuest(QuestID, false, true);
-		if (!Quest)quest = QuestsBase.GetQuest(QuestID, false, false);
-		var temp1 = quest.m_Rewards;
-		var temp2 = quest.m_OptionalRewards;
+		if (!quest) quest = QuestsBase.GetQuest(QuestID, false, false);
 
-		data.m_Xp = quest.m_Xp;
-		data.m_Cash = quest.m_Cash;
+		rewardObject.m_Xp = quest.m_Xp;
+		rewardObject.m_Cash = quest.m_Cash;
+
+		var temp1 = quest.m_Rewards;
 		for (var i in temp1) {
 			var reward = temp1[i]
 			for (var y in reward) {
-				data.m_Rewards.push(reward[y]);
+				rewardObject.m_Rewards.push(reward[y]);
 			}
 		}
-		//this doesn't work. Maybe becasue i have already completed the quests so i cant get optional rewards?
+		// This doesn't appear to work. Maybe becasue i have already completed the quests so i can't get optional rewards anymore?
+		var temp2 = quest.m_OptionalRewards;
 		for (var i in temp2) {
 			var reward = temp2[i]
 			for (var y in reward) {
-				data.m_OptionalRewards.push(reward[y]);
+				rewardObject.m_OptionalRewards.push(reward[y]);
 			}
 		}
-		return data
+		return rewardObject
 	}
 
-	private function InfiltrateReports() {
-		for (var i in _root.missionrewardcontroller.m_RewardWindows) {
-			var Injected = new InjectedReport(_root.missionrewardcontroller.m_RewardWindows[i]);
-		}
-	}
-
+	// For some reason missionreward window fails to fetch questSolved text for paused missions
+	// This function manually updates the missionrewardwindow content
 	private function UpdatePaused(TierID) {
-		// for some reason missionreward window fails to fetch quest solved text for paused missions
-		// strangely enough it works for completed and active ones just fine
 		for (var i:Number = 0 ; i <_root.missionrewardcontroller.m_RewardWindows.length; i++) {
 			if (_root.missionrewardcontroller.m_RewardWindows[i].GetContent().GetID() == TierID || TierID == -1) {
 				var m_Character = Character.GetClientCharacter();
-				var m_Faction  = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
+				var m_Faction = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
 				var text
 				var oldSize = _root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription._height;
 				switch (m_Faction) {
@@ -131,6 +125,7 @@ class com.fox.DoubleAgent.InjectedJournal {
 						text = LDBFormat.LDBGetText("QuestTaskSolvedTemplar", Number(TierID));
 						break
 				}
+				if (!text) text = LDBFormat.LDBGetText("QuestTaskSolved", Number(TierID));
 				_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text = text;
 				var qID = QuestsBase.GetMainQuestIDByQuestID(TaskID);
 				var name =  QuestsBase.GetQuest(qID, false, true).m_MissionName;
@@ -160,15 +155,14 @@ class com.fox.DoubleAgent.InjectedJournal {
 			content.SetData(data);
 			content["SignalClose"].Connect( _root.missionrewardcontroller.SlotMissionWindowClosed, this);
 			_root.missionrewardcontroller.m_RewardWindows.push(missionReward);
-			setTimeout(Delegate.create(this, InfiltrateReports), 100);
 			_root.missionrewardcontroller.m_RewardWindows[_root.missionrewardcontroller.m_RewardWindows.length - 1].ShowStroke( true )
 			var character:Character = Character.GetClientCharacter();
 			if (character != undefined) { character.AddEffectPackage( "sound_fxpackage_GUI_send_report.xml" ); }
 			if (data.paused) UpdatePaused(data.m_QuestTaskID);
 		} else {
-			var name = QuestsBase.GetQuest(m_Journal.m_Window.m_Content.m_ExpandedMissionID, false, true).m_MissionName;
-			if (!name) name = QuestsBase.GetQuest(m_Journal.m_Window.m_Content.m_ExpandedMissionID, false, false).m_MissionName;
-			if (name)UtilsBase.PrintChatText("Unable to find mission report for " +name);
+			var name = QuestsBase.GetQuest(m_JournalClip.m_Window.m_Content.m_ExpandedMissionID, false, true).m_MissionName;
+			if (!name) name = QuestsBase.GetQuest(m_JournalClip.m_Window.m_Content.m_ExpandedMissionID, false, false).m_MissionName;
+			if (name) UtilsBase.PrintChatText("Unable to find mission report for " +name);
 		}
 	}
 }
