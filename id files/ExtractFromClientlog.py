@@ -1,63 +1,69 @@
 import json
 import re
 
-dragon = {}
-lumie = {}
-templar = {}
-shared = {}
+data = {}
+data2 = {}
 
+FactionPattern = "Faction=([a-zA-Z]+)"
+QuestPattern = "QuestID=([0-9]+)"
+TaskPattern = "TaskID=([0-9]+)"
+CashPattern = "Cash=([0-9]+)"
+XPPattern = "XP=([0-9]+)"
+rewardPattern = "rewards=(.*?) optional"
+optionalpattern = "optional=(.*?) Cash"
+QuestNamePattern = "QuestName=(.*?) TaskID"
+ReportPattern = "Report=(.*?)\|\|"
+	
+def extract_data(line):
+	global data
+	try:
+		faction = re.search(FactionPattern, line).group(1)
+		quest_ID = re.search(QuestPattern, line).group(1)
+		
+		rewards = re.search(rewardPattern, line).group(1)
+		optional = re.search(optionalpattern, line).group(1)
+		Cash = re.search(CashPattern, line)
+		if not Cash:
+			Cash =0
+		else:
+			Cash = Cash.group(1)
+		
+		XP = re.search(XPPattern, line)
+		if not XP:
+			XP =0
+		else:
+			XP = XP.group(1)
+		
+		quest_Name = re.search(QuestNamePattern, line).group(1)
+		task_ID = re.search(TaskPattern, line).group(1)
+		report = re.search(ReportPattern, line).group(1)
+		if faction not in data2:
+			data2[faction]={}
+		data2[faction][str(quest_ID)]=task_ID
+		if str(quest_ID) not in data:		
+			data[str(quest_ID)] = {
+					'name': quest_Name,
+					'TaskID': task_ID,
+					'rewards': rewards,
+					'optional': optional,
+					'Cash': Cash,
+					'XP': XP,
+					faction+'-report': report.replace("&&", "\n")}
+		else:
+			data[str(quest_ID)][faction+'-report'] = report.replace("&&", "\n")
+	except Exception as e:
+		print(line,e)
 
-def extract_data(start):
-    global dragon, lumie, templar, shared
-    FactionPattern = "Faction=([a-zA-Z]+)"
-    QuestPattern = "QuestID=([0-9]+)"
-    TaskPattern = "TaskID=([0-9]+)"
-    QuestNamePattern = "QuestName=(.*?) TaskID"
-    ReportPattern = "Report=(.*?)\|\|"
-    faction = re.search(FactionPattern, line).group(1)
-    quest_ID = re.search(QuestPattern, line).group(1)
-    quest_Name = re.search(QuestNamePattern, line).group(1)
-    task_ID = re.search(TaskPattern, line).group(1)
-    report = re.search(ReportPattern, line).group(1)
-    if faction == "Lumie":
-        lumie[str(quest_ID)] = {
-            'QuestName': quest_Name,
-            'TaskID': task_ID,
-            'Report': report.replace("&&", "\n")
-        }
-    elif faction == "Shared":
-        shared[str(quest_ID)] = {
-            'QuestName': quest_Name,
-            'TaskID': task_ID,
-            'Report': report.replace("&&", "\n")
-        }
-    elif faction == "Dragon":
-        dragon[str(quest_ID)] = {
-            'QuestID': quest_ID,
-            'QuestName': quest_Name,
-            'TaskID': task_ID,
-            'Report': report.replace("&&", "\n")
-        }
-    elif faction == "Templar":
-        templar[str(quest_ID)] = {
-            'QuestName': quest_Name,
-            'TaskID': task_ID,
-            'Report': report.replace("&&", "\n")
-        }
-
-
-with open("G:\Secret World Legends\ClientLog.txt", encoding='utf-8') as data_file:
-    content = data_file.readlines()
+with open("G:\Secret World Legends\ClientLog.txt", encoding='utf-8') as f:
+    content = f.readlines()
     index = 0
     for line in content:
         if "WARNING: Scaleform.DoubleAgent" in line:
             extract_data(line)
 
-with open('IlluminatiMissions.json', 'w') as outfile:
-    json.dump(lumie, outfile, sort_keys=True, indent=4)
-with open('TemplarMissions.json', 'w') as outfile:
-    json.dump(templar, outfile, sort_keys=True, indent=4)
-with open('DragonMissions.json', 'w') as outfile:
-    json.dump(dragon, outfile, sort_keys=True, indent=4)
-with open('SharedMissions.json', 'w') as outfile:
-    json.dump(shared, outfile, sort_keys=True, indent=4)
+with open('Missions.json', 'w',encoding="utf8") as outfile:
+	json.dump(data,outfile,indent=4,sort_keys=True,ensure_ascii=False);
+
+for faction in data2:
+	with open(faction+'.json', 'w',encoding="utf8") as outfile:
+		json.dump(data2[faction],outfile,indent=4,sort_keys=True,ensure_ascii=False);

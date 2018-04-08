@@ -11,12 +11,14 @@ class com.fox.DoubleAgent.Agent {
 	private var m_FactionArchieve:DistributedValue;
 	private var m_SharedArchieve:DistributedValue;
 	private var m_Journal:Journal;
+	static var NoNetworkText:String;
 
 	public static function main(swfRoot:MovieClip):Void {
 		var m_Agent:Agent = new Agent(swfRoot);
 		swfRoot.onLoad = function() { m_Agent.onLoad(); };
 		swfRoot.onUnload = function() { m_Agent.onUnload(); };
 		swfRoot.OnModuleActivated = function() { m_Agent.Activated(); };
+		NoNetworkText = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", 21469);
 	}
 
 	public function Agent() { }
@@ -80,12 +82,12 @@ class com.fox.DoubleAgent.Agent {
 				RewardWindow.prototype._Layout = RewardWindow.prototype["Layout"];
 				RewardWindow.prototype.Layout = function () {
 					this._Layout();
-					this.m_LogoIlluminati._x = this.m_BonusCashReward._x;
-					this.m_LogoTemplar._x = this.m_BonusCashReward._x+25;
-					this.m_LogoDragon._x = this.m_BonusCashReward._x+50;
-					this.m_LogoIlluminati._y = this.m_BonusCashReward._y + 24;
-					this.m_LogoTemplar._y = this.m_BonusCashReward._y + 24;
-					this.m_LogoDragon._y	= this.m_BonusCashReward._y + 24;
+					this.m_LogoIlluminati._x = this.m_CollectButton._x-80;
+					this.m_LogoTemplar._x = this.m_CollectButton._x-55;
+					this.m_LogoDragon._x = this.m_CollectButton._x-30;
+					this.m_LogoIlluminati._y = this.m_CollectButton._y;
+					this.m_LogoTemplar._y = this.m_CollectButton._y;
+					this.m_LogoDragon._y = this.m_CollectButton._y;
 				}
 			}
 			// Finds the biggest shape in an object and adjusts its alpha
@@ -102,6 +104,19 @@ class com.fox.DoubleAgent.Agent {
 			}
 			RewardWindow.prototype.ChangeFaction = function(LDBString:String) {
 				var text = LDBFormat.LDBGetText(LDBString, Number(this.m_QuestID));
+				if(text == Agent.NoNetworkText){
+					switch(LDBString){
+						case "QuestTaskSolvedTemplar":
+							text = LDBFormat.LDBGetText(50314, Number(this.m_QuestID));
+							break
+						case "QuestTaskSolvedIlluminati":
+							text = LDBFormat.LDBGetText(50315, Number(this.m_QuestID));
+							break
+						case "QuestTaskSolvedDragon":
+							text = LDBFormat.LDBGetText(50316, Number(this.m_QuestID));
+							break
+					}
+				}
 				if (text) {
 					this.m_MissionDescription.text = text;
 					this.Layout();

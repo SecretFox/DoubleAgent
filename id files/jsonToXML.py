@@ -5,37 +5,29 @@ Dragon = {}
 Illuminati = {}
 Templar = {}
 
-filelist = ["IlluminatiMissions.json", "DragonMissions.json", "TemplarMissions.json"]
+filelist = ["illuminati.json", "dragon.json", "templar.json"]
 
 FactionData = {}
 for file in filelist:
     with open(file) as json_file:
         jsonData = json.load(json_file)
         for key in jsonData:
-            FactionData[key] = jsonData[key]["TaskID"]
-with open('Factions.json', 'w') as f:
-    json.dump(FactionData, f, indent=4)
+            FactionData[key] = jsonData[key]
 
 SharedData = {}
-with open("SharedMissions.json") as json_file:
+with open("all.json") as json_file:
     data = json.load(json_file)
     for key in data:
-        SharedData[key] = data[key]["TaskID"]
-with open('Shared.json', 'w') as f:
-    json.dump(SharedData, f, indent=4)
+        SharedData[key] = data[key]
 
-with open("Factions.json", "r") as f:
-    FactionJson = json.load(f)
-    root = ET.Element('root')
-    for i in FactionJson:
-        ET.SubElement(root, "Q", tID=FactionJson[i], qID=i)
-    tree = ET.ElementTree(root)
-    tree.write("Faction.xml")
+root = ET.Element('root')
+for i in FactionData:
+	ET.SubElement(root, "Q", tID=FactionData[i], qID=i)
+tree = ET.ElementTree(root)
+tree.write("Faction.xml")
 
-with open("Shared.json", "r") as f:
-    FactionJson = json.load(f)
-    root = ET.Element('root')
-    for i in FactionJson:
-        ET.SubElement(root, "Q", tID=FactionJson[i], qID=i)
-    tree = ET.ElementTree(root)
-    tree.write("Shared.xml")
+root = ET.Element('root')
+for i in SharedData:
+	ET.SubElement(root, "Q", tID=SharedData[i], qID=i)
+tree = ET.ElementTree(root)
+tree.write("Shared.xml")
