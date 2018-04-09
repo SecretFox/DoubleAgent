@@ -4,10 +4,12 @@ import com.GameInterface.DistributedValue;
 import com.GameInterface.Game.Character;
 import com.GameInterface.Quest;
 import com.GameInterface.QuestsBase;
+import com.GameInterface.Utils;
 import com.GameInterface.UtilsBase;
 import com.Utils.Archive;
 import com.Utils.Colors;
 import com.Utils.LDBFormat;
+import com.Utils.Text;
 import mx.utils.Delegate;
 
 class com.fox.DoubleAgent.Journal {
@@ -63,25 +65,25 @@ class com.fox.DoubleAgent.Journal {
 	private function FindTaskID(QuestID:Number) {
 		var factionData:Archive = m_FactionArchieve.GetValue();
 		var sharedData:Archive = m_SharedArchieve.GetValue();
-		var task_ID = factionData.FindEntry(string(QuestID));
-		if (!task_ID || !ValidateTaskID(QuestID, task_ID)) {
-			task_ID = Number(sharedData.FindEntry(string(QuestID)));
+		var tempID = factionData.FindEntry(string(QuestID));
+		if (!tempID || !ValidateTaskID(QuestID, tempID)) {
+			tempID = Number(sharedData.FindEntry(string(QuestID)));
 		}
-		if (task_ID && ValidateTaskID(QuestID, task_ID)) {
-			TaskID = Number(task_ID);
+		if (tempID && ValidateTaskID(QuestID, tempID)) {
+			TaskID = Number(tempID);
 		}
 	}
 
 	// Usually this data is from Quests.GetAllRewards();
-	// Im manually constructing the RewardsObject from quest data
+	// As we don't actually have the quest completed Im manually constructing the RewardsObject from quest data
 	private function ConstructRewardObject(QuestID) {
 		var rewardObject = new Object();
 		rewardObject.m_QuestTaskID = TaskID;
 		rewardObject.m_OptionalRewards = new Array();
 		rewardObject.m_Rewards = new Array();
-		rewardObject.paused = m_JournalClip.m_Window.m_Content.m_Menu.m_MissionDropdown._selectedIndex == 2?true:false;
 
 		var quest:Quest = QuestsBase.GetQuest(QuestID, false, true);
+		//not sure the above could fail but eh
 		if (!quest) quest = QuestsBase.GetQuest(QuestID, false, false);
 
 		rewardObject.m_Xp = quest.m_Xp;
@@ -105,33 +107,37 @@ class com.fox.DoubleAgent.Journal {
 		return rewardObject
 	}
 
-	// For some reason missionreward window fails to fetch questSolved text for paused missions
-	// This function manually updates the missionrewardwindow content
-	private function UpdatePaused(TierID) {
+	// Missionreward window only searches through Completed and Active quests for the quest ID, thus failing with paused ones.
+	// same function also returns the Mission Data(used for subject text and Cash rewards).
+	// This function should manually update the missionrewardwindow content if needed
+	private function UpdateData(TierID) {
 		for (var i:Number = 0 ; i <_root.missionrewardcontroller.m_RewardWindows.length; i++) {
 			if (_root.missionrewardcontroller.m_RewardWindows[i].GetContent().GetID() == TierID || TierID == -1) {
-				var m_Character = Character.GetClientCharacter();
-				var m_Faction = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
-				var text
-				var oldSize = _root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription._height;
-				switch (m_Faction) {
-					case _global.Enums.Factions.e_FactionDragon:
-						text = LDBFormat.LDBGetText("QuestTaskSolvedDragon", Number(TierID));
-						break
-					case _global.Enums.Factions.e_FactionIlluminati:
-						text = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", Number(TierID));
-						break
-					case _global.Enums.Factions.e_FactionTemplar:
-						text = LDBFormat.LDBGetText("QuestTaskSolvedTemplar", Number(TierID));
-						break
+				if (!_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text){
+					var qID = QuestsBase.GetMainQuestIDByQuestID(TaskID);
+					// this one is called by the missionreport window, but has the same problem as the questID function
+					// var text = com.GameInterface.Quests.GetSolvedTextForQuest(qID,TierID);
+					var text:String;
+					var m_Character = Character.GetClientCharacter();
+					var m_Faction = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
+					var m_quest = QuestsBase.GetQuest(qID, false, true);
+					switch (m_Faction) {
+						case _global.Enums.Factions.e_FactionDragon:
+							text = LDBFormat.LDBGetText("QuestTaskSolvedDragon", Number(TierID));
+							break
+						case _global.Enums.Factions.e_FactionIlluminati:
+							text = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", Number(TierID));
+							break
+						case _global.Enums.Factions.e_FactionTemplar:
+							text = LDBFormat.LDBGetText("QuestTaskSolvedTemplar", Number(TierID));
+							break
+					}
+					if(!text)text = LDBFormat.LDBGetText("QuestTaskSolved", Number(TierID));
+					_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text = text;
+					_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_SubjectText.text = m_quest.m_MissionName;
+					_root.missionrewardcontroller.m_RewardWindows[i].SetSize( 610, 250 );
+					_root.missionrewardcontroller.m_RewardWindows[i].m_BonusCashReward.textField.text = "+ " + Text.AddThousandsSeparator((m_quest.m_Cash ? Math.ceil(m_quest.m_Cash*(Utils.GetGameTweak("SubscriberBonusPaxPercent")/100)) : 0));
 				}
-				if (!text) text = LDBFormat.LDBGetText("QuestTaskSolved", Number(TierID));
-				_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text = text;
-				var qID = QuestsBase.GetMainQuestIDByQuestID(TaskID);
-				var name =  QuestsBase.GetQuest(qID, false, true).m_MissionName;
-				if (!name) name =  QuestsBase.GetQuest(qID, false, false).m_MissionName;
-				_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_SubjectText.text = name;
-				_root.missionrewardcontroller.m_RewardWindows[i].SetSize( 610, 250 );
 			}
 		}
 	}
@@ -158,10 +164,9 @@ class com.fox.DoubleAgent.Journal {
 			_root.missionrewardcontroller.m_RewardWindows[_root.missionrewardcontroller.m_RewardWindows.length - 1].ShowStroke( true )
 			var character:Character = Character.GetClientCharacter();
 			if (character != undefined) { character.AddEffectPackage( "sound_fxpackage_GUI_send_report.xml" ); }
-			if (data.paused) UpdatePaused(data.m_QuestTaskID);
+			UpdateData(data.m_QuestTaskID);
 		} else {
 			var name = QuestsBase.GetQuest(m_JournalClip.m_Window.m_Content.m_ExpandedMissionID, false, true).m_MissionName;
-			if (!name) name = QuestsBase.GetQuest(m_JournalClip.m_Window.m_Content.m_ExpandedMissionID, false, false).m_MissionName;
 			if (name) UtilsBase.PrintChatText("Unable to find mission report for " +name);
 		}
 	}

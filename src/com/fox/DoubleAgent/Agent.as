@@ -1,5 +1,6 @@
 import com.GameInterface.DistributedValue;
 import com.GameInterface.DistributedValueBase;
+import com.GameInterface.QuestsBase;
 import com.Utils.Archive;
 import com.Utils.LDBFormat;
 import com.fox.DoubleAgent.Journal;
@@ -46,7 +47,6 @@ class com.fox.DoubleAgent.Agent {
 			if (RewardWindow.prototype._SetData == undefined) {
 				RewardWindow.prototype._SetData = RewardWindow.prototype["SetData"];
 				RewardWindow.prototype.SetData = function (rewardObject:Object) {
-
 					this.m_LogoIlluminati = this.createEmptyMovieClip("m_LogoIlluminati", this.getNextHighestDepth());
 					//hitbox, due to transparent pixels
 					this.m_LogoIlluminati.beginFill(0xFFFFFF, 0);
@@ -104,17 +104,26 @@ class com.fox.DoubleAgent.Agent {
 			}
 			RewardWindow.prototype.ChangeFaction = function(LDBString:String) {
 				var text = LDBFormat.LDBGetText(LDBString, Number(this.m_QuestID));
-				if(text == Agent.NoNetworkText){
-					switch(LDBString){
-						case "QuestTaskSolvedTemplar":
-							text = LDBFormat.LDBGetText(50314, Number(this.m_QuestID));
-							break
-						case "QuestTaskSolvedIlluminati":
-							text = LDBFormat.LDBGetText(50315, Number(this.m_QuestID));
-							break
-						case "QuestTaskSolvedDragon":
-							text = LDBFormat.LDBGetText(50316, Number(this.m_QuestID));
-							break
+				if (text == Agent.NoNetworkText){
+					// checks if player has unlocked the mission reports yet
+					var NetworkTest = QuestsBase.GetSolvedTextForQuest(QuestsBase.GetMainQuestIDByQuestID(21498), 21498);
+					var unlocked:Boolean;
+					if (Agent.NoNetworkText == NetworkTest) unlocked = false;
+					else if (!NetworkTest) unlocked = false;
+					else unlocked = true;
+					// fetch the real report if unlocked
+					if(unlocked){
+						switch(LDBString){
+							case "QuestTaskSolvedTemplar":
+								text = LDBFormat.LDBGetText(50314, Number(this.m_QuestID));
+								break
+							case "QuestTaskSolvedIlluminati":
+								text = LDBFormat.LDBGetText(50315, Number(this.m_QuestID));
+								break
+							case "QuestTaskSolvedDragon":
+								text = LDBFormat.LDBGetText(50316, Number(this.m_QuestID));
+								break
+						}
 					}
 				}
 				if (text) {
