@@ -3108,6 +3108,15 @@
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag",
         "templar-report": "Your field report has been received and is currently being analysed and evaluated. Thank you for your contribution. We will contact you if more information is needed. A reward and cash bonus has been credited to your account."
     },
+    "3095": {
+        "Cash": "1653",
+        "TaskID": "21519",
+        "XP": "13004",
+        "all-report": "Darkened garages, amiright? All we wanted was to transact a little black market deal, fare and square, on the QT. And what do we get? A clusterfuck.\n\nSo what do we know? A street shaman wants to sell some artifact contraband. We're buying. But a Morninglight cultist kills the seller and takes the merchandise. Then a Phoenician agent kills the cultist and takes the merchandise (and leaves you an FU by way of a deadly trap). Classic Phoenicians.\n\nBut how did they know about the deal? Let that keep you up at night. If I'm not getting any sleep, why should anyone else?\n\nKG",
+        "name": "Into Darkness",
+        "optional": "",
+        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier"
+    },
     "3096": {
         "Cash": "0",
         "TaskID": "17574",
@@ -3602,7 +3611,7 @@
         "Cash": "0",
         "TaskID": "17917",
         "XP": "0",
-        "all-report": "You found the vampire’s killer. It was another vampire, the larger more brutish kind. It would seem that these larger vampires get their great strength from feeding on their own kin. This new information should be uploaded to your faction.",
+        "all-report": "You found the vampire's killer. It was another vampire, the larger more brutish kind. It would seem that these larger vampires get their great strength from feeding on their own kin. This new information should be uploaded to your faction.",
         "name": "O Brother, Where Art Thou",
         "optional": "",
         "rewards": "1xMelee item reward bag"
@@ -4041,6 +4050,15 @@
         "optional": "",
         "rewards": ""
     },
+    "3264": {
+        "Cash": "1653",
+        "TaskID": "18405",
+        "XP": "13004",
+        "all-report": "I'm reminded of one of those oceanic pictures — the one where a fish is being eaten by a bigger fish, which is being eaten by a bigger fish, which is...I'll let you continue the mental image.\n\nOur intelligence suggested a blackmarket deal between a street shaman and an Illuminati agent. Apparently both the Morninglight and the Phoenicians gathered the same intelligence. Was this a badly kept secret, or is some party purposefully letting the information slip (perhaps so that we all eliminate one another)? I find the latter scenario more worrisome, don't you?\n\nR. Sonnac",
+        "name": "Into Darkness",
+        "optional": "",
+        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier"
+    },
     "3265": {
         "Cash": "500",
         "TaskID": "18401",
@@ -4064,6 +4082,42 @@
         "optional": "",
         "rewards": "",
         "templar-report": "The vampires are certainly a threat, but as Carmen said, it's merely a convenient crisis. Skepticism is advised when speaking with the magicals, they can be rather fanciful at times, but there must be some truth to this tale of Dracula and Mara the Vampire Queen. More than a grain: we have independent verification that a great battle was fought in this region five hundred years ago.\n\nProceed with caution. The forest is home to older things, and these Romany vampire hunters – the Drăculeşti – are skilled, I'm sure, but they are also unsanctioned and potentially disruptive. You will want to handle them with care, if you are to decipher this puzzle further.\n\nAnd decipher it you must.\n\nR. Sonnac"
+    },
+    "3268": {
+        "Cash": "1653",
+        "TaskID": "18452",
+        "XP": "13004",
+        "all-report": "Hot dang! This place is lousy with artifact grubbers. A street shaman, an Illuminati stooge, a Morninglight cultist, and a Purple People Eater walk into a parking garage… And the punchline was you! So many crossed signals. But you came out of it ok. We react to the bow-wow-now immediacy of chaos better than the other mooks. You're the last cat standing.\n\nIt's almost as if someone was counting on that, and let the details drop on purpose.\n\nAlmost...\n\nD.K.",
+        "name": "Into Darkness",
+        "optional": "",
+        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier"
+    },
+    "3273": {
+        "Cash": "1653",
+        "TaskID": "19005",
+        "XP": "13006",
+        "all-report": "Congratulations are in order! Your quick thinking in the field has impressed Dame Julia Beatrix Tyburn, an accomplishment not many are able to achieve. A shame one of our own has turned against the order, however, in the end, Rhys Delacroix got his just due. I commend you on a job well done. You are certainly garnering some attention as of late. Keep up the good work.\n\nR. Sonnac",
+        "name": "Rogue Agent",
+        "optional": "",
+        "rewards": "1xAgent Dossier: Faction Quartermaster,1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xSpecial Agent Dossier: Faction Quartermaster"
+    },
+    "3274": {
+        "Cash": "1653",
+        "TaskID": "19007",
+        "XP": "13002",
+        "all-report": "Seems like all the players came out of the woodwork. Must suck when the world knows you've been a bad parent, and one of your own leaves the nest like that. Fido - you sat, you rolled over, and most importantly, you obeyed. Keep playing fetch and you'll do just fine. Just don't pull any of that rogue Templar shit on us, I still own you and it wouldn't end well. \n\nIn other news, the walls are starting to whisper about your good deeds. Not that I really give a shit. \n\nCiao-ciao. \n\nKG",
+        "name": "Rogue Agent",
+        "optional": "",
+        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xSpecial Agent Dossier: Faction Quartermaster"
+    },
+    "3275": {
+        "Cash": "1653",
+        "TaskID": "19006",
+        "XP": "13002",
+        "all-report": "The cat is in the bag and bag is floating downstream - all to a rhythm of meows and chaos, kid. You did it! You put the ram in the rama lama ding dong, and you're making daddy proud. Keep on the path I point you on and maybe I won't have to adjust those legs if you catch my drift, cheesy puffs. You do catch my drifts, right?",
+        "name": "Rogue Agent",
+        "optional": "",
+        "rewards": "1xAgent Dossier: Faction Quartermaster,1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xSpecial Agent Dossier: Faction Quartermaster"
     },
     "3276": {
         "Cash": "500",
@@ -4567,7 +4621,7 @@
         "Cash": "0",
         "TaskID": "19050",
         "XP": "149600",
-        "all-report": "While investigating a number of ancient deliveries addressed to ‘Installation 10’ you discovered that the facility was dealing with military biochemical research of some sort. What was going on inside Installation 10?",
+        "all-report": "While investigating a number of ancient deliveries addressed to 'Installation 10' you discovered that the facility was dealing with military biochemical research of some sort. What was going on inside Installation 10?",
         "name": "Installation 10",
         "optional": "",
         "rewards": ""
@@ -4576,7 +4630,7 @@
         "Cash": "0",
         "TaskID": "19057",
         "XP": "74800",
-        "all-report": "You discovered the dead body of a Morninglight member, who was involved in a hardcore game of Truth, Dare or Double Dare. He had been sent on a deadly Double Dare to fetch the eyelid of the mountain troll Denmother. The other person in the double dare was someone called Alina, and her task was to play courier for Adrian. Funny that working for Adrian was considered as dangerous as getting a troll’s eyelid.",
+        "all-report": "You discovered the dead body of a Morninglight member, who was involved in a hardcore game of Truth, Dare or Double Dare. He had been sent on a deadly Double Dare to fetch the eyelid of the mountain troll Denmother. The other person in the double dare was someone called Alina, and her task was to play courier for Adrian. Funny that working for Adrian was considered as dangerous as getting a troll's eyelid.",
         "name": "Truth, Dare, Double Dare",
         "optional": "",
         "rewards": ""
@@ -4763,6 +4817,17 @@
         "optional": "",
         "rewards": "1xEssence of Devourer",
         "templar-report": "Oh Nikola, why must you taunt us with your legacy? It leaves a bitter taste in my mouth to call a man a genius who spurned us so. But at least he spurned everyone else in equal measure.\n\nLet us ignore the evidence and consider him an honorary member.\n\nR. Sonnac"
+    },
+    "3420": {
+        "Cash": "1653",
+        "TaskID": "21535",
+        "XP": "13006",
+        "dragon-report": "Remember that time I threw you a celebratory, whangdoodle of a feast with the rarest meats prepared by one of the hottest chefs on the planet, and, during dessert, I made that joke about the dead stripper in the cake before revealing that we had actually eaten one of your loved ones, all while I showed you polaroids of the butchering process, and I told you it was retribution for leaving the Dragon and joining another outfit, and you were shocked—SHOCKED!—probably because you didn't know anyone still had polaroid film. Remember that!?\n\nApplesauce! Of course you don't remember. That's because I reached into the stream of chance and destroyed that timeline. I did it as a mercy to you.\n\nOr maybe I don't have that power.\n\nAlso, pick up coffee filters while you're out. I'm running low.\n\nD.K.",
+        "illuminati-report": "Way to represent the Blue before the Council of Venice. You fought off the Purple jerks and delivered the hardware. I think you impressed Venice.\n\n...you may have impressed them a little too much. Word may have reached me that their headhunters are scouting you out. Remember who actually owns your head. Remember who owns the explosive chip implanted in your spine. Ciao-ciao.\n\nKG",
+        "name": "Venetian Missile Crisis",
+        "optional": "",
+        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
+        "templar-report": "Once again, your mission report makes for a thrilling read. Very Ian Fleming. I can only imagine how impressed the Council of Venice is with your acts of derring-do. Such impressive feats might just infatuate the Council with you, inspire them to try and woo you from our loving embrace. I, of course, understand, but there are those further up the chain who are more…jealous. Of course, I do not need to spell out any obvious warnings. I trust your loyalty implicitly.\n\nR. Sonnac"
     },
     "3421": {
         "Cash": "675",
@@ -5072,8 +5137,8 @@
         "Cash": "700",
         "TaskID": "19565",
         "XP": "6360",
-        "dragon-report": "In his recurring dream, the child finds himself on an ancient shore, a survivor of the world’s wreckage. He calls out a name but no one answers.\nThe child has a habit of conflating things: past, present and future; the possible and the inevitable; the meaning of one and the meanings of many.\nThe Atenists – they intend something that is beyond calculation, something that could cause the world’s wreckage and wipe out the names of all.\nThe mummy in the suit will ask you for something now. You must wait a thousand years to give it to him.",
-        "illuminati-report": "I booked you an o’clock with Saïd. Looks like you’ll need him to uncover the Atenist operation. Knowing the prune prince you’ll probably have to play ball to get intel out of him. That’s fine, as long as we get what we need.\nWell, fine to a point. Remember the old adage: break the knees before you break the bank.\nMy current overview of the situation is off all kinds of charts. I’m getting reports about time tombs, train schedules, third-age explosives, hazardous material containment issues, and Nazis.\nYeah, I’m pretty sure some of that is unreliable, but I’m just going to throw everything at you. As far as I’m concerned, we’re beyond need-to-know on this one.\nKG",
+        "dragon-report": "In his recurring dream, the child finds himself on an ancient shore, a survivor of the world's wreckage. He calls out a name but no one answers.\nThe child has a habit of conflating things: past, present and future; the possible and the inevitable; the meaning of one and the meanings of many.\nThe Atenists – they intend something that is beyond calculation, something that could cause the world's wreckage and wipe out the names of all.\nThe mummy in the suit will ask you for something now. You must wait a thousand years to give it to him.",
+        "illuminati-report": "I booked you an o'clock with Saïd. Looks like you'll need him to uncover the Atenist operation. Knowing the prune prince you'll probably have to play ball to get intel out of him. That's fine, as long as we get what we need.\nWell, fine to a point. Remember the old adage: break the knees before you break the bank.\nMy current overview of the situation is off all kinds of charts. I'm getting reports about time tombs, train schedules, third-age explosives, hazardous material containment issues, and Nazis.\nYeah, I'm pretty sure some of that is unreliable, but I'm just going to throw everything at you. As far as I'm concerned, we're beyond need-to-know on this one.\nKG",
         "name": "The Prisoner",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
@@ -5084,7 +5149,7 @@
         "TaskID": "19586",
         "XP": "8102",
         "dragon-report": "The models have cleared you to board a train heading to Cairo and to stop the delivery of the occult device. Not that you think you need our consent or confirmation. You work with who you want to, open unauthorised messages, slip through history like it was your own personal wet dream. You are a variable. You are energy.\nThe Kingdom were responsible for Tokyo, in part. They delivered the weapon, ensured its safe passage out of Egypt. Now – in the name of balance – they appear driven to undo what they have done.\nBehind the irony and wit, the strange shamble and designer affectations, no one is more desperate to stop a second Tokyo than Saïd. That is precisely what he wants us to think.",
-        "illuminati-report": "Saïd – I’m assuming you’ve pieced together how exactly he was involved in the Tokyo incident. Still not sure if his current whimsy is being dictated by genuine regret or if he’s got some other angle. I’d respect him more if there was another angle. Otherwise it’s just sad.\nEither way, you should have everything you need now to put an end to the Atenist operation. Container, contained, coordinates, etc.\nThey’re on a train heading towards a Phoenician ship waiting for them in Cairo. Explain to me why you’re not already on it?\nKG",
+        "illuminati-report": "Saïd – I'm assuming you've pieced together how exactly he was involved in the Tokyo incident. Still not sure if his current whimsy is being dictated by genuine regret or if he's got some other angle. I'd respect him more if there was another angle. Otherwise it's just sad.\nEither way, you should have everything you need now to put an end to the Atenist operation. Container, contained, coordinates, etc.\nThey're on a train heading towards a Phoenician ship waiting for them in Cairo. Explain to me why you're not already on it?\nKG",
         "name": "The City Before Us",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
@@ -5094,7 +5159,7 @@
         "Cash": "700",
         "TaskID": "19513",
         "XP": "6480",
-        "all-report": "Buzz, buzz, buzz. Fine, let’s be formal and text it all out. I suppose you want a record of our dealings for the benefit of your employer:\n\nSo for the record: yes, I helped smuggle that first bomb out of Egypt. But believe it or not, Tokyo has been bad for business. That is why I’m eager to stop them from doing it again. My interest in the tombs stems merely from a desire to make things right. Scout’s honour!\n\nAll evidence suggests that it’s impossible to make up for the big things, the terrible things, the inevitable things – those have a way of ripping through all potentialities. History goes to great lengths to conserve even the worst of itself. \n\nBut it is possible to tweak the past without disrupting the foundations. Learn to take the pulse of history. Tinker when it wants you to. The Third Age had it all down to a science. They had everything down to a science.\n\nSaïd",
+        "all-report": "Buzz, buzz, buzz. Fine, let's be formal and text it all out. I suppose you want a record of our dealings for the benefit of your employer:\n\nSo for the record: yes, I helped smuggle that first bomb out of Egypt. But believe it or not, Tokyo has been bad for business. That is why I'm eager to stop them from doing it again. My interest in the tombs stems merely from a desire to make things right. Scout's honour!\n\nAll evidence suggests that it's impossible to make up for the big things, the terrible things, the inevitable things – those have a way of ripping through all potentialities. History goes to great lengths to conserve even the worst of itself. \n\nBut it is possible to tweak the past without disrupting the foundations. Learn to take the pulse of history. Tinker when it wants you to. The Third Age had it all down to a science. They had everything down to a science.\n\nSaïd",
         "name": "The City Beneath Us",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier"
@@ -5104,18 +5169,18 @@
         "TaskID": "19577",
         "XP": "7950",
         "dragon-report": "The Atenists are torturing the answers they need out of people – members of the Marya especially. The how, the where, the when. There are devils in the details of delivering something of such magnitude. Having lost a key ally has crippled their ability to proceed.\n\nThe child cries each time a prisoner gives up something they know. The child cries many things, including names I was never meant to hear.\n\nAt the end of all this a traitor will be revealed. There are many in your midst. You may have met one already – the traitor – he holds the final letter of the name.\n\nBetrayal is inevitable. How you feel about it will depend on where you stand.",
-        "illuminati-report": "God you people are needy. Do I have to hold your hand through this whole thing? Look, unless you’re planning to die in there, you can hold off on the report until you actually know something. What kind of tombs were they talking about in that note? What fucking delivery?\n\nSee what I mean? If I wanted vague bullshit I’d get Cassini to hack me into the Dragon’s network. I’m sure their analysis of this situation is all kinds of meaningless.\n\nFun fact: Once dated a guy named Saddur. Ugh, I really hope it’s not him. Awkward.",
+        "illuminati-report": "God you people are needy. Do I have to hold your hand through this whole thing? Look, unless you're planning to die in there, you can hold off on the report until you actually know something. What kind of tombs were they talking about in that note? What fucking delivery?\n\nSee what I mean? If I wanted vague bullshit I'd get Cassini to hack me into the Dragon's network. I'm sure their analysis of this situation is all kinds of meaningless.\n\nFun fact: Once dated a guy named Saddur. Ugh, I really hope it's not him. Awkward.",
         "name": "Mean Streets",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
-        "templar-report": "The operative words in the orders you recovered were “tombs” and “delivery”. At this point I’m not sure the two are part of the same project. The vast majority of cultist resources in the region are focused on what appears to be an export scenario. However, they also have a smaller research team looking into something called “time tombs”.\n\nOh my, indeed.\n\nAs for the name “Saddur”: I’ve heard it somewhere before. I can’t quite pinpoint the details, though I’m certain they’re not pleasant.\n\nR. Sonnac"
+        "templar-report": "The operative words in the orders you recovered were “tombs” and “delivery”. At this point I'm not sure the two are part of the same project. The vast majority of cultist resources in the region are focused on what appears to be an export scenario. However, they also have a smaller research team looking into something called “time tombs”.\n\nOh my, indeed.\n\nAs for the name “Saddur”: I've heard it somewhere before. I can't quite pinpoint the details, though I'm certain they're not pleasant.\n\nR. Sonnac"
     },
     "3472": {
         "Cash": "700",
         "TaskID": "19584",
         "XP": "8100",
-        "dragon-report": "TRANSMIT – initiate source signal – RECEIVE – coming to you live from Tokyo – WITNESS – sweetling!\nChoices matter and we choose you! Don’t take it personally, your network is the easiest to hack. Not just one handler, not just two! So many voices to huff and puff and shimmy through!\nIs this your way of asking us to dance? Accepted!\nSweetling, Tokyo 1 burst through eons of interference and unbridled our voice for you. But it also left Gaia time-worn and terror-torn. Imagine what Tokyo 2 could do!\nThat’s not an invitation. You must stop them. Focus on the locus of the second singularity. This is as close as we must ever get. Hurry, hurry, hurry!",
-        "illuminati-report": "Time tombs? Seriously? Look, I'm familiar with ancient transit systems. Remember who introduced you to Agartha?\nThe tombs in Egypt are limited in scope – a local third age knockoff of some of Agartha’s more obscure branches. Those branches have been a key action area for decades now. Frankly, the benefit-to-headache ratio of temporal tampering isn’t great. Let me condense years’ worth of research for you: Ugh.\nThe Templars can spend all day reminiscing about the glory days, but not you. I want you looking ahead. Internally, cultist leaders are calling this operation “Tokyo 2.”\nFun fact: Tokyo 1 was not a good day for us.",
+        "dragon-report": "TRANSMIT – initiate source signal – RECEIVE – coming to you live from Tokyo – WITNESS – sweetling!\nChoices matter and we choose you! Don't take it personally, your network is the easiest to hack. Not just one handler, not just two! So many voices to huff and puff and shimmy through!\nIs this your way of asking us to dance? Accepted!\nSweetling, Tokyo 1 burst through eons of interference and unbridled our voice for you. But it also left Gaia time-worn and terror-torn. Imagine what Tokyo 2 could do!\nThat's not an invitation. You must stop them. Focus on the locus of the second singularity. This is as close as we must ever get. Hurry, hurry, hurry!",
+        "illuminati-report": "Time tombs? Seriously? Look, I'm familiar with ancient transit systems. Remember who introduced you to Agartha?\nThe tombs in Egypt are limited in scope – a local third age knockoff of some of Agartha's more obscure branches. Those branches have been a key action area for decades now. Frankly, the benefit-to-headache ratio of temporal tampering isn't great. Let me condense years' worth of research for you: Ugh.\nThe Templars can spend all day reminiscing about the glory days, but not you. I want you looking ahead. Internally, cultist leaders are calling this operation “Tokyo 2.”\nFun fact: Tokyo 1 was not a good day for us.",
         "name": "A Time to Every Purpose",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
@@ -5134,8 +5199,8 @@
         "Cash": "700",
         "TaskID": "19537",
         "XP": "3240",
-        "dragon-report": "How well do you know the people we work for? When the time comes, will you know them by their works?\n\nThere are ripples everywhere. Of past ages. Of lost names. Ripples of hidden truths you haven’t seen. You’ve given them all they want and I’ve given you all I can. The ripples remain, the fourth letter, it will remain even after they disconnect me.",
-        "illuminati-report": "Don’t get all sappy on me. I’m not interested in romantic depictions of the past. Get me some Third Age tech with a sizeable blast radius in mint condition and then we’ll talk.\n\nCiao-ciao",
+        "dragon-report": "How well do you know the people we work for? When the time comes, will you know them by their works?\n\nThere are ripples everywhere. Of past ages. Of lost names. Ripples of hidden truths you haven't seen. You've given them all they want and I've given you all I can. The ripples remain, the fourth letter, it will remain even after they disconnect me.",
+        "illuminati-report": "Don't get all sappy on me. I'm not interested in romantic depictions of the past. Get me some Third Age tech with a sizeable blast radius in mint condition and then we'll talk.\n\nCiao-ciao",
         "name": "Know Them By Their Works",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5154,12 +5219,12 @@
         "Cash": "700",
         "TaskID": "19551",
         "XP": "3180",
-        "dragon-report": "There is nothing worse than feeling trapped. Of course, one doesn’t need bars and prison wardens. A job you cannot leave. A contract you cannot break. A fate you cannot escape.\nA prison made of models.\nDo you have the strength to free everyone, to free us all?",
+        "dragon-report": "There is nothing worse than feeling trapped. Of course, one doesn't need bars and prison wardens. A job you cannot leave. A contract you cannot break. A fate you cannot escape.\nA prison made of models.\nDo you have the strength to free everyone, to free us all?",
         "illuminati-report": "Ever heard of acceptable losses? Collateral damage? Wasting company time?\nStay on the ball out there.\nKG",
         "name": "The Escape",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
-        "templar-report": "I have often asked you to focus on the big picture. However, I won’t trivialise the risk involved in leaving those poor people imprisoned . Some of them may very well be privy to key information that we must keep from the enemy at all costs. A noble effort, all in all.\nBesides, it was on the way.\nR. Sonnac"
+        "templar-report": "I have often asked you to focus on the big picture. However, I won't trivialise the risk involved in leaving those poor people imprisoned . Some of them may very well be privy to key information that we must keep from the enemy at all costs. A noble effort, all in all.\nBesides, it was on the way.\nR. Sonnac"
     },
     "3480": {
         "Cash": "650",
@@ -5170,51 +5235,51 @@
         "name": "The Defence Never Rests",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
-        "templar-report": "Why does it feel like they’re only trying to get in when we’re there to stop them? I’ve watched droves of Illuminati and skulks of Dragons set up outside those doors – and nothing! Or, on occasion, worse than nothing: suspicious villagers coming and going as they please.\n\nMake no mistake: we are the only ones doing any real work out there. Take pride in the fact.\n\nR. Sonnac"
+        "templar-report": "Why does it feel like they're only trying to get in when we're there to stop them? I've watched droves of Illuminati and skulks of Dragons set up outside those doors – and nothing! Or, on occasion, worse than nothing: suspicious villagers coming and going as they please.\n\nMake no mistake: we are the only ones doing any real work out there. Take pride in the fact.\n\nR. Sonnac"
     },
     "3481": {
         "Cash": "750",
         "TaskID": "19590",
         "XP": "4950",
-        "dragon-report": "The great news, I’m sure, is obvious. You really have done an excellent job.\nNow the not so great news: I’ve been analysing the codes and messages tucked inside some of your reports. We generally want your relationship with all members of the connected to be rooted in freedom and exploration. The end results are meant to stretch the models, not hinder them. But they also serve to expose glitches in the system.\nConsider this particular glitch exposed now. He is being disconnected.\nI’m not sure how much you know – or need to know – about rogue agendas. I don’t know how many others may share them. So I’m just going to make my position as clear as I can: not everything needs a name.\nI trust you agree.",
-        "illuminati-report": "I suppose a confirmed kill on Abdel would’ve been too much to ask? God forbid I get what I want for once. Yes, overall, these are tolerable results. A second earth shattering explosion has been averted etc. You’ve earned your high-five.\nSo high-five.\nHowever, just to complicate things, I’m going to let you in on something. I’ve recently learned that that ship in Cairo was scheduled for London. As in, boom goes Temple Hall.\nUgh. It’s probably better that we didn’t know this earlier.\nKG",
+        "dragon-report": "The great news, I'm sure, is obvious. You really have done an excellent job.\nNow the not so great news: I've been analysing the codes and messages tucked inside some of your reports. We generally want your relationship with all members of the connected to be rooted in freedom and exploration. The end results are meant to stretch the models, not hinder them. But they also serve to expose glitches in the system.\nConsider this particular glitch exposed now. He is being disconnected.\nI'm not sure how much you know – or need to know – about rogue agendas. I don't know how many others may share them. So I'm just going to make my position as clear as I can: not everything needs a name.\nI trust you agree.",
+        "illuminati-report": "I suppose a confirmed kill on Abdel would've been too much to ask? God forbid I get what I want for once. Yes, overall, these are tolerable results. A second earth shattering explosion has been averted etc. You've earned your high-five.\nSo high-five.\nHowever, just to complicate things, I'm going to let you in on something. I've recently learned that that ship in Cairo was scheduled for London. As in, boom goes Temple Hall.\nUgh. It's probably better that we didn't know this earlier.\nKG",
         "name": "The Last Train to Cairo",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
-        "templar-report": "The Force-Marshal had us all bracing for the absolute worst. Went as far as digging up the floor and stocking the emergency vaults, would you believe? I understand the need for worst-case scenarios, but I was also quick to praise the resourcefulness of our agents in the field.\nI knew you’d come through.\nThough the crisis has been averted, we are still somewhat in the dark about who the Atenists ultimately deliver to. Someone pulled the strings on this – as they did on Tokyo. The Kingdom claim they don’t know who it is. Phoenicians? Morninglight? Orochi? Some ungodly mixture of all three? Someone else entirely? To be honest, I’m not ready to discount the Dragon or the Illuminati either.\nIt is a mystery we shall have to unravel at the site of the original crime.\nFear not, that time will come.\nR. Sonnac"
+        "templar-report": "The Force-Marshal had us all bracing for the absolute worst. Went as far as digging up the floor and stocking the emergency vaults, would you believe? I understand the need for worst-case scenarios, but I was also quick to praise the resourcefulness of our agents in the field.\nI knew you'd come through.\nThough the crisis has been averted, we are still somewhat in the dark about who the Atenists ultimately deliver to. Someone pulled the strings on this – as they did on Tokyo. The Kingdom claim they don't know who it is. Phoenicians? Morninglight? Orochi? Some ungodly mixture of all three? Someone else entirely? To be honest, I'm not ready to discount the Dragon or the Illuminati either.\nIt is a mystery we shall have to unravel at the site of the original crime.\nFear not, that time will come.\nR. Sonnac"
     },
     "3482": {
         "Cash": "0",
         "TaskID": "19591",
         "XP": "0",
-        "dragon-report": "I wish there was an easier way to say this. The first letter is the most important. Someday you’ll understand.\nNow they are coming to disconnect me. After that, you will hear no more of my intimations. Maybe that will be a blessing to you? Everyone deserves a name, needs one, even in the dark, even among the many.\nI have clung to that belief, taken great risks because of it. Someday you’ll understand.\nIt all began when I overheard the child scream. Now, I cannot get that word out of my head, but I do not dare repeat it.\nThe first letter is the most important. How many have you found already? Enough, I hope.\nCan you appreciate that some things cannot simply be said, must be intimated, discovered? Otherwise they would have intercepted it too easily. Don’t believe what she tells you, please. Everything needs a name.",
-        "illuminati-report": "We’re pretty sure we’ve managed to flag these date shipments each time the Atenists try to get them out. It’s possible one or two keep getting through. Of course there’s no hard evidence of that, unless you count the 10 o’clock news.\nFun fact: dates are disgusting and anyone who eats them probably deserves to get infected.",
+        "dragon-report": "I wish there was an easier way to say this. The first letter is the most important. Someday you'll understand.\nNow they are coming to disconnect me. After that, you will hear no more of my intimations. Maybe that will be a blessing to you? Everyone deserves a name, needs one, even in the dark, even among the many.\nI have clung to that belief, taken great risks because of it. Someday you'll understand.\nIt all began when I overheard the child scream. Now, I cannot get that word out of my head, but I do not dare repeat it.\nThe first letter is the most important. How many have you found already? Enough, I hope.\nCan you appreciate that some things cannot simply be said, must be intimated, discovered? Otherwise they would have intercepted it too easily. Don't believe what she tells you, please. Everything needs a name.",
+        "illuminati-report": "We're pretty sure we've managed to flag these date shipments each time the Atenists try to get them out. It's possible one or two keep getting through. Of course there's no hard evidence of that, unless you count the 10 o'clock news.\nFun fact: dates are disgusting and anyone who eats them probably deserves to get infected.",
         "name": "Date Night",
         "optional": "",
         "rewards": "",
-        "templar-report": "Multitasking at a time like this? I honestly don’t know whether to chastise or promote you.\nI shall reflect on the matter.\nR. Sonnac"
+        "templar-report": "Multitasking at a time like this? I honestly don't know whether to chastise or promote you.\nI shall reflect on the matter.\nR. Sonnac"
     },
     "3484": {
         "Cash": "1500",
         "TaskID": "19601",
         "XP": "9831",
         "dragon-report": "The Council moves unlike the Council. Is a thing only that thing when it behaves as itself? Or does it transform into something else? Every action splinters an entity into a thousand alternate selves. We reinvent ourselves with every step. Those who reinvent themselves purposefully are admirable or dangerous. Or both. Which version of you will enter this Nursery? Which will leave? Follow the song.",
-        "illuminati-report": "So the Council is actually making a move on this? I didn’t get the memo, and I hate being out of the loop. See what you can find out from this agent. It’s not often they take actual, proactive action, but then, kids in danger do make for a big emotional catalyst. It’s what PR sound bites are made of. Until we run the whole game board, we have to play the politics too. So cooperate. Be sure to say things like, “Think of the children!” every so often. Get to the bottom of what the Orochi are doing with children all the way out in Count Chocula’s armpit. If you can, find out before the Council agent does. A step ahead. That’s how we dance.\nKG",
+        "illuminati-report": "So the Council is actually making a move on this? I didn't get the memo, and I hate being out of the loop. See what you can find out from this agent. It's not often they take actual, proactive action, but then, kids in danger do make for a big emotional catalyst. It's what PR sound bites are made of. Until we run the whole game board, we have to play the politics too. So cooperate. Be sure to say things like, “Think of the children!” every so often. Get to the bottom of what the Orochi are doing with children all the way out in Count Chocula's armpit. If you can, find out before the Council agent does. A step ahead. That's how we dance.\nKG",
         "name": "When the Hatchet Falls",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
-        "templar-report": "I am surprised to see the Council of Venice charging forward into this. Inaction would reflect badly on us, so lead that charge. Find this Nursery place, and open its secrets to the light of our good judgement. These crimes against children are more extensive than we feared. It is starting to resemble the disaster that was the Children’s Crusade, but that is a horror story for another time. Merry hunting.\nR. Sonnac"
+        "templar-report": "I am surprised to see the Council of Venice charging forward into this. Inaction would reflect badly on us, so lead that charge. Find this Nursery place, and open its secrets to the light of our good judgement. These crimes against children are more extensive than we feared. It is starting to resemble the disaster that was the Children's Crusade, but that is a horror story for another time. Merry hunting.\nR. Sonnac"
     },
     "3485": {
         "Cash": "1200",
         "TaskID": "19604",
         "XP": "2360",
         "dragon-report": "A predator with countless years to prey. Its belly is a mass grave. How many souls did you cut out of its guts? A bat can distract from the coming typhoon.",
-        "illuminati-report": "Those adorable Soviets — just saving an ancient vampire for a rainy day. Stay on task. You’re not there to slay every forgotten Cold War horror, but find out what the Orochi Group is up to. Zurn’s throwing a tantrum that you had to destroy the specimen, but he has enough dangerous pets as it is. Alright, get back to it. Eyes to the prize. Ciao-ciao.\nKG",
+        "illuminati-report": "Those adorable Soviets — just saving an ancient vampire for a rainy day. Stay on task. You're not there to slay every forgotten Cold War horror, but find out what the Orochi Group is up to. Zurn's throwing a tantrum that you had to destroy the specimen, but he has enough dangerous pets as it is. Alright, get back to it. Eyes to the prize. Ciao-ciao.\nKG",
         "name": "Dead Chamber",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
-        "templar-report": "The irresponsibility of others is both manifold and multiform, and yet I am always surprised by new innovations in foolishness. To leave such a walking plague on humankind for others to trip open like a Jack n’ the Box! You showed decisive initiative in cleansing the world of this ambulating blight. But do not loose focus. We must know the intentions of the Orochi Group in Transylvania. Veritas odit moras.\nR. Sonnac"
+        "templar-report": "The irresponsibility of others is both manifold and multiform, and yet I am always surprised by new innovations in foolishness. To leave such a walking plague on humankind for others to trip open like a Jack n' the Box! You showed decisive initiative in cleansing the world of this ambulating blight. But do not loose focus. We must know the intentions of the Orochi Group in Transylvania. Veritas odit moras.\nR. Sonnac"
     },
     "3486": {
         "Cash": "1200",
@@ -5252,11 +5317,11 @@
         "TaskID": "19676",
         "XP": "7866",
         "dragon-report": "The child allowed himself to shiver once. Hurricanes begin with much less. The child stamped his foot seventeen times. Do you understand the importance of what is about to happen? What do you say to the threshold that yawns before you?",
-        "illuminati-report": "Odd that this Dragan Dzoavich is helping you against his own people. My intel shows him to be a decades long veteran in Orochi’s security forces. A sniper who’s put down things from this and other worlds. Ice cold killer. And now you say he’s cashing in all his chips on a little girl and talking to her teddy bear? We’ll worry about that later. Eyes on the prize. You worked in some thrilling heroics, made Orochi look silly, and found the Nursery. We are way past polite daggers under the table with these people, so you may as well crack the pinata and see what’s inside. Ciao-ciao.\n\nKG",
+        "illuminati-report": "Odd that this Dragan Dzoavich is helping you against his own people. My intel shows him to be a decades long veteran in Orochi's security forces. A sniper who's put down things from this and other worlds. Ice cold killer. And now you say he's cashing in all his chips on a little girl and talking to her teddy bear? We'll worry about that later. Eyes on the prize. You worked in some thrilling heroics, made Orochi look silly, and found the Nursery. We are way past polite daggers under the table with these people, so you may as well crack the pinata and see what's inside. Ciao-ciao.\n\nKG",
         "name": "You Only Die Twice",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
-        "templar-report": "I see your adventures have been quite…cinematic. I caution you to swallow your adrenalin and put on a most serious mind before entering this Nursery. We know the horrors of Amity House, Orochi’s work with children, and the importance of whatever dread purpose this all furthers. All dark speculations point to the Nursery. Remember that you are a lion of the Templars, and you are about to prowl into a menacing place. Audaces fortuna iuvat.\n\nR. Sonnac"
+        "templar-report": "I see your adventures have been quite…cinematic. I caution you to swallow your adrenalin and put on a most serious mind before entering this Nursery. We know the horrors of Amity House, Orochi's work with children, and the importance of whatever dread purpose this all furthers. All dark speculations point to the Nursery. Remember that you are a lion of the Templars, and you are about to prowl into a menacing place. Audaces fortuna iuvat.\n\nR. Sonnac"
     },
     "3490": {
         "Cash": "1200",
@@ -5274,7 +5339,7 @@
         "TaskID": "19624",
         "XP": "2360",
         "dragon-report": "Playfulness is a sign of intelligence in animals. The otter. The Dolphin. The crow. Playfulness is a sign of intelligence in humans. Foolishness is often not the substance of stupidity, but the shadow of massive intellect. Do you take my compliment/criticism?",
-        "illuminati-report": "Way to go, 007. Do you know why that’s your nick name now? That’s right! When I ran your recent report through a standardised test, that’s the IQ it calculated. GET BACK TO WORK!\n\nKG",
+        "illuminati-report": "Way to go, 007. Do you know why that's your nick name now? That's right! When I ran your recent report through a standardised test, that's the IQ it calculated. GET BACK TO WORK!\n\nKG",
         "name": "Red Snow",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5285,7 +5350,7 @@
         "TaskID": "19639",
         "XP": "2360",
         "dragon-report": "The child once allowed himself to pull the wings off a fly, in order to learn a valuable lesson in cruelty. The Orochi pull and pull. They hoard wings, but throw away wisdom.",
-        "illuminati-report": "Passing the intel on to our parazoology geek think tanks. The bio-tech applications of supernatural anatomy are limitless. Just don’t tell them that.\n\nKG",
+        "illuminati-report": "Passing the intel on to our parazoology geek think tanks. The bio-tech applications of supernatural anatomy are limitless. Just don't tell them that.\n\nKG",
         "name": "A Menagerie Darkly",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5296,7 +5361,7 @@
         "TaskID": "19631",
         "XP": "2042",
         "dragon-report": "The child wonders how important the emergency must be, to make the Orochi leave behind such gaudy devices.",
-        "illuminati-report": "It’s Christmas! You shouldn’t have. They are so shiny. And the calibre. You may have earned a bonus in your stockings.\n\nKG",
+        "illuminati-report": "It's Christmas! You shouldn't have. They are so shiny. And the calibre. You may have earned a bonus in your stockings.\n\nKG",
         "name": "Assorted Nasties",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5329,7 +5394,7 @@
         "TaskID": "19688",
         "XP": "7868",
         "dragon-report": "The child cried out. The child does not cry out. Do you understand?\n\nThe Dark Mother is revealed. Birds scream her seventeen names before crashing into our windows and dying. All patterns are set to oblivion. Can you be the little chaos that disrupts apocalypse? Go now, little ripple maker. When a scalpel must kill a whale, where do you cut?\n\nShe is so many things. That is what makes her dangerous. But all those things balance on the twisted fulcrum of being a mother. That is where you will unbalance her.",
-        "illuminati-report": "Read this very carefully: Do not lose Lilith.\n\nShe’s the real deal. Her seventeen names tripped some alarms on my computer. We’re in an alert with a colour I’ve never seen. Way past Defcon-5. The talking heads, the ones at the very tippy-top of the pyramid are sending word directly to me. They never do that!\n\nI don’t believe in God, but I’m afraid of him, and I’m more afraid of the talking heads, and they’re afraid of her. Stay on her. I don’t know what will happen to either of us if you don’t.\n\nI’m not fucking around.\n\nKG",
+        "illuminati-report": "Read this very carefully: Do not lose Lilith.\n\nShe's the real deal. Her seventeen names tripped some alarms on my computer. We're in an alert with a colour I've never seen. Way past Defcon-5. The talking heads, the ones at the very tippy-top of the pyramid are sending word directly to me. They never do that!\n\nI don't believe in God, but I'm afraid of him, and I'm more afraid of the talking heads, and they're afraid of her. Stay on her. I don't know what will happen to either of us if you don't.\n\nI'm not fucking around.\n\nKG",
         "name": "The Sound of Children",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
@@ -5340,7 +5405,7 @@
         "TaskID": "19690",
         "XP": "9834",
         "dragon-report": "The child smiled. And frowned. And smiled. Do you understand? Do you now see the value of chaos? You were a tiny pattern entering a field of behemoth equations. You a microbe – they mastodons. Yet through chaos, you undermined their patterns. You were the free radical that disrupted the molecule as big as a black whole. But the end is only a beginning. We have more work for you. There is Filth in Agartha. Tokyo must be dealt with. You are needed. You are one of the chosen, the ones who will dive into the mouth of oblivion and choke it on its own tongue. None should envy you.",
-        "illuminati-report": "When we look back, we’ll designate today as “The Game Changer.” A prehistoric super-bitch revealed herself, the Filth entered Agartha, and a little girl and her teddy bear stood up to god mollusks on the edge of reality.\n\nThe talking heads are chattering. I’ve never seen them like this. We’re putting you in a higher pay bracket. It’s time to think forward. Think Tokyo. Think Lilith. Think “what the hell is really running Orochi?” There are bigger players, and they’re entering the game. The coming days will decide who runs the gameboard when the shit fans stop spinning.\n\nFeel the pressure? You better.\n\nKG",
+        "illuminati-report": "When we look back, we'll designate today as “The Game Changer.” A prehistoric super-bitch revealed herself, the Filth entered Agartha, and a little girl and her teddy bear stood up to god mollusks on the edge of reality.\n\nThe talking heads are chattering. I've never seen them like this. We're putting you in a higher pay bracket. It's time to think forward. Think Tokyo. Think Lilith. Think “what the hell is really running Orochi?” There are bigger players, and they're entering the game. The coming days will decide who runs the gameboard when the shit fans stop spinning.\n\nFeel the pressure? You better.\n\nKG",
         "name": "I Walk Into Empty",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5351,7 +5416,7 @@
         "TaskID": "19691",
         "XP": "2360",
         "dragon-report": "The Zero Point Pathogen woven into DNA. Vermiculated art. Outwardly, when seeing all the blood, acid, and waving tendrils, it appears to be chaos. But up close, at the molecular level, we see that this is a dreadful order.\n",
-        "illuminati-report": "The most dangerous lunatics are the ones that sound lucid. Passing on Dr. Schreber's lab results to Zurn (who isn’t as dangerous because he doesn’t even pretend to be lucid).\n\n\nKG",
+        "illuminati-report": "The most dangerous lunatics are the ones that sound lucid. Passing on Dr. Schreber's lab results to Zurn (who isn't as dangerous because he doesn't even pretend to be lucid).\n\n\nKG",
         "name": "Where the Little Ones Go",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
@@ -5363,7 +5428,7 @@
         "XP": "7867",
         "dragon-report": "Our models predicted this. A second line of defence for the mother - less refined and more brutish. Careful amalgamations of silica and elements, charged by anima and given a shambling semblance of existence. They are strong, they are efficient and they have no place in our models.\nEverything we know points to them appearing in places of where the filth has been spotted - all the anomalies that you have been investigating, in other words. Transylvania and Egypt and Solomon Island - probably Tokyo as well, but you don't have clearance to go there yet.\nOur data set needs cleaning up. Remove these elements whenever you encounter them.",
         "illuminati-report": "Another one of those things? They're some kind of automatic defence mechanism - the eggheads are calling them the white blood cells of Gaia.\nWe're getting reports that they've been showing up where the filth outbreaks have been most prevalent. Which means all of the wonderful hotspots you've been visiting recently.\nManagement thinks we already have enough competition for the title of Last Man Standing after the apocalypse. If you see any more of those things, get rid of them. They're about as effective at saving the world as buying a Prius and they're almost as annoying.\nWe want to remain the dominant fucking parasite.",
-        "name": "The Verdant Guardian",
+        "name": "The Verdant Guardian (NOT USED)",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
         "templar-report": "This is rather awkward, isn't it? Here we are trying to clean up the world and Gaia sends out a second batch of defenders to help us. Of course, these ones are rather slow and stupid but rather better than you are at smashing things (which is impressive all by itself, believe me).\nWe can't have this, obviously. Laymen won't be able to tell the difference between a rampaging creature of darkness or a rampaging creature of Gaia.\nVenice has agreed that these particular creatures could be a public relation disaster for The Secret World. We're authorized to remove them swiflty and silently.\nLet's show them how good the Templars can be at monster slaying."
@@ -5374,7 +5439,7 @@
         "XP": "7867",
         "dragon-report": "Our models predicted this. A second line of defence for the mother - less refined and more brutish. Careful amalgamations of silica and elements, charged by anima and given a shambling semblance of existence. They are strong, they are efficient and they have no place in our models.\nEverything we know points to them appearing in places of where the filth has been spotted - all the anomalies that you have been investigating, in other words. Transylvania and Egypt and Solomon Island - probably Tokyo as well, but you don't have clearance to go there yet.\nOur data set needs cleaning up. Remove these elements whenever you encounter them.",
         "illuminati-report": "Another one of those things? They're some kind of automatic defence mechanism - the eggheads are calling them the white blood cells of Gaia.\nWe're getting reports that they've been showing up where the filth outbreaks have been most prevalent. Which means all of the wonderful hotspots you've been visiting recently.\nManagement thinks we already have enough competition for the title of Last Man Standing after the apocalypse. If you see any more of those things, get rid of them. They're about as effective at saving the world as buying a Prius and they're almost as annoying.\nWe want to remain the dominant fucking parasite.",
-        "name": "The Guardian of Ice",
+        "name": "The Guardian of Ice (NOT USED)",
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
         "templar-report": "This is rather awkward, isn't it? Here we are trying to clean up the world and Gaia sends out a second batch of defenders to help us. Of course, these ones are rather slow and stupid but rather better than you are at smashing things (which is impressive all by itself, believe me).\nWe can't have this, obviously. Laymen won't be able to tell the difference between a rampaging creature of darkness or a rampaging creature of Gaia.\nVenice has agreed that these particular creatures could be a public relation disaster for The Secret World. We're authorized to remove them swiflty and silently.\nLet's show them how good the Templars can be at monster slaying."
@@ -5953,6 +6018,105 @@
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
         "templar-report": "The Old Guard don't approve of breaking into bank vaults. Considering they own most of the major banks in Europe, it isn't that surprising. But this was a Faust Capital vault. Faust Capital are another branch of the many-limbed Orochi Group and while we aren't in direct conflict with them, I am always happy to tweak their nose recently.\nOn a more personal note, I advise being more cautious around this Daimon Kiyota character. He is unreliable and dangerous. Perhaps worse, he is ambitious. He is no friend of our organization. Remember that.\n\nR. Sonnac"
     },
+    "3624": {
+        "Cash": "0",
+        "TaskID": "20147",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Technology",
+        "optional": "",
+        "rewards": "1xGenizah of Technology",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3627": {
+        "Cash": "0",
+        "TaskID": "20152",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Clay",
+        "optional": "",
+        "rewards": "1xGenizah of Clay",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3633": {
+        "Cash": "0",
+        "TaskID": "20158",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Water",
+        "optional": "",
+        "rewards": "1xGenizah of Water",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3635": {
+        "Cash": "0",
+        "TaskID": "20160",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Stone",
+        "optional": "",
+        "rewards": "1xGenizah of Stone",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3637": {
+        "Cash": "0",
+        "TaskID": "20162",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "name": "The Talos of Magma",
+        "optional": "",
+        "rewards": "1xGenizah of Magma",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3639": {
+        "Cash": "0",
+        "TaskID": "20164",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Sand",
+        "optional": "",
+        "rewards": "1xGenizah of Sand",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3641": {
+        "Cash": "0",
+        "TaskID": "20166",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Verdancy",
+        "optional": "",
+        "rewards": "1xGenizah of Verdancy",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3643": {
+        "Cash": "0",
+        "TaskID": "20168",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Swarms",
+        "optional": "",
+        "rewards": "1xGenizah of the Swarm",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "3645": {
+        "Cash": "0",
+        "TaskID": "20170",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Frost",
+        "optional": "",
+        "rewards": "1xGenizah of Frost",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
     "3646": {
         "Cash": "1500",
         "TaskID": "20186",
@@ -6376,7 +6540,7 @@
         "templar-report": "You have ascended. Congratulations. Do not lose focus. Samuel Chandra is…well, we have rumours, files, and apocrypha, but he is not our battle today. Find Lilith. Do not underestimate her, give her no opportunities, but do not let zeal destroy a chance for intelligence. We need to know what she knows.\nR. Sonnac"
     },
     "3703": {
-        "Cash": "0",
+        "Cash": "1220",
         "TaskID": "20448",
         "XP": "9600",
         "dragon-report": "The incidents in Tokyo have left you marked. Hidden, but not forgotten. You are the mechanical conspiracy of a switchblade in the pocket. We will activate you soon.",
@@ -6609,7 +6773,7 @@
         "illuminati-report": "This Unbound thing is the type of piece that no player wants on the game board. It's the one thing that enemies can agree on. Too powerful, even for the powerful. Too chaotic, even for the insane. No one can make use of it. No one wants to rub that lamp. Blue, Red, Green, Purple... even mad cultists and tentacle gods, we are all in agreement to leave that thing out of play. In this round no one wins, so no one loses. The game plays on.\n\nKG",
         "name": "Beneath You It Eats Its Name",
         "optional": "",
-        "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
+        "rewards": "1xRipped Ancient Fabric,1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xAgent Dossier",
         "templar-report": "So the Unbound is the original, the reality, but I wonder, as I page through One Thousand and One Nights in my study, where the seed, the image, the story germ of the jinn in the lamp first came from. Was it just the fancy of a Frenchman writer? Was it a bit of mythology passed down from someone who encountered this being in the long ago? Or was it purposeful? Did the Unbound plant that seed in our collective mythology, presenting itself in a more pleasing form, hoping some mortal would come free it for the price of three wishes? A sobering thought. A being that can bend reality just might have influence in our world, even from its cell. No prison is airtight, as we have unfortunately learnt. Vigilance is our glorious burden.\n\nR. Sonnac"
     },
     "3838": {
@@ -6725,6 +6889,29 @@
         "optional": "",
         "rewards": "1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag",
         "templar-report": "I hear tell that you were on quite the merry chase as of late. Dame Julia expressed an interest in having a face-to-face talk with you, in the near future, to discuss the finer points.\nR. Sonnac"
+    },
+    "3851": {
+        "Cash": "0",
+        "TaskID": "20879",
+        "XP": "10000",
+        "all-report": "Your field report has been received and is currently being analysed and evaluated. Thank you for your contribution. We will contact you if more information is needed. A reward and cash bonus has been credited to your account.",
+        "dragon-report": "Zurn won't stop ranting about some incredible bulk. You've gone and gotten him started. Thanks. No, really. THANKS. \n\nApparently Orochi tried their hand at Gatekeeper formulation or manipulation or emulation or evisceration or something. One of the tions. It turned out bad, way worse than what you saw down there in the depths. To have tangled with the real thing and come out intact is a big deal. Hopefully that means you're making friends for us. You are, right?\n\nOh, apparently it's \"hulk\". Whatever.\n\nKG",
+        "illuminati-report": "Jeepers... You saw the hotsy-totsy cat across the way, dudded up, brought him a rose, and asked him to dance. Ho boy did he dance! What a waltz! Those dogs moved right into an explosive climax! So so... beautiful. You made a friend here today. He owes you, don't let that cat forget it.\n\nDK",
+        "name": "The Gatekeeper",
+        "optional": "",
+        "rewards": "1xSpoils of the Hallowed Earth",
+        "templar-report": "Your report reads like bad fiction. Shards of condensed anger. A yellow man who turned red and fired energy beams at you. Enormous nearly indestructible robots who healed the angry red man. A gallant effort to make the red man yellow again. Alas, sometimes reality and bad fiction overlap. Marks where marks are due - we know little about this \"Gatekeeper\", but we do know that having him as an ally is prudent.\n\nCarry on.\n\nR. Sonnac"
+    },
+    "3864": {
+        "Cash": "0",
+        "TaskID": "20903",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Silver",
+        "optional": "",
+        "rewards": "1xGenizah of Silver",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
     },
     "3868": {
         "Cash": "0",
@@ -8185,6 +8372,28 @@
         "name": "Callback",
         "optional": "",
         "rewards": "1xDawn's Favour"
+    },
+    "4095": {
+        "Cash": "0",
+        "TaskID": "21510",
+        "XP": "10000",
+        "dragon-report": "The nerds from the nerdery are telling me that the interface/entity we're choosing to call Gaia creates these big bad constructs as a sort of training-reward game - heavy on the carrot, light on the stick. Something's gumming up the works and turning the big bads \"super agro\". A virus can enter any system, even cosmic systems.\n\nKG",
+        "illuminati-report": "Jeepers creepers! When good piñatas go bad! But hey, you chilled off that elemental goon. You got the goods. Let that be a lesson to you. Life is a piñata. If you bash it good enough, play that sweet chin music, all sorts of lovely things fall out.\n\nD.K.",
+        "name": "The Talos of Concrete",
+        "optional": "",
+        "rewards": "1xGenizah of Concrete",
+        "templar-report": "Something is rotten in Agartha. Gaia's automatons are not behaving as they should. Call them supernal, call them divine - it is disturbing that such as they can be corrupted. They are a test turned deadly. Thankfully, to a Templar, any challenge without mortal peril is not a true test.\n\nR. Sonnac"
+    },
+    "4096": {
+        "Cash": "1575",
+        "TaskID": "21517",
+        "XP": "7744",
+        "dragon-report": "One sly step ahead of the hatchetman, eh? QBL has been a naughty network. I'm sending them a few scary spooks to haunt them. Dig? Also...I think I might loose some hired goons to play hide-and-go-kill with you. Keep you on your toes, well practiced, hitting on all eight.\n\nI'm just kidding! No I'm not. Yes I am! NO I'M NOT!\n\n...am I? \n\nD.K.",
+        "illuminati-report": "You're internet famous. You're viral. That can be lethal, but you came out of it ok. This time. QBL is going to be a pain, but we have media connections too. You can live to fight another day, and the next one, and the next one - and all it'll cost you is looking over your shoulder for the rest of your life. Ciao-ciao.\n\nKG",
+        "name": "Public Enemy Number One",
+        "optional": "",
+        "rewards": "1xAgent Dossier,1xWeapon Reward Bag,2xTalisman Reward Bag,1xGlyph Reward Bag,1xDawn's Favour",
+        "templar-report": "The limelight, it would seem, can burn the sensitive skin of conspiracy. Or in your case...it can literally dismember. Good show against that particularly tenacious bounty hunter. We are going to have to find a way to counter QBL's malfeasance. Vigilance is a virtue, though in your case, I'm afraid it will be a necessity.\n\nR. Sonnac"
     },
     "959": {
         "Cash": 0,

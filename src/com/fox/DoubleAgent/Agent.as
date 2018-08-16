@@ -1,6 +1,7 @@
 import com.GameInterface.DistributedValue;
 import com.GameInterface.DistributedValueBase;
 import com.GameInterface.QuestsBase;
+import com.GameInterface.UtilsBase;
 import com.Utils.Archive;
 import com.Utils.LDBFormat;
 import com.fox.DoubleAgent.Journal;
@@ -19,16 +20,17 @@ class com.fox.DoubleAgent.Agent {
 		swfRoot.onLoad = function() { m_Agent.onLoad(); };
 		swfRoot.onUnload = function() { m_Agent.onUnload(); };
 		swfRoot.OnModuleActivated = function() { m_Agent.Activated(); };
-		NoNetworkText = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", 21469);
+		
 	}
 
-	public function Agent() { }
-
-	public function onLoad() {
+	public function Agent() {
+		NoNetworkText = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", 21469);
 		m_FactionArchieve = DistributedValue.Create("DoubleAgent_Faction");
 		m_SharedArchieve = DistributedValue.Create("DoubleAgent_Shared");
-
 		JournalDVal = DistributedValue.Create("mission_journal_window");
+	}
+
+	public function onLoad() {
 		JournalDVal.SignalChanged.Connect(SlotJournalOpened, this);
 		SlotJournalOpened();
 		//  Saving the values to DV so that they don't get unloaded on reloadui/character change
@@ -103,13 +105,53 @@ class com.fox.DoubleAgent.Agent {
 				clip._alpha = alpha;
 			}
 			RewardWindow.prototype.ChangeFaction = function(LDBString:String) {
-				var text = LDBFormat.LDBGetText(LDBString, Number(this.m_QuestID));
+				var text;
+				var factionMission
+				switch(this.m_MainQuestID){
+					case 3095:
+						factionMission = "Darkness"
+						break
+					case 3274:
+						factionMission = "Rogue"
+						break
+					default:
+						break
+				}
+				if (!factionMission) text = LDBFormat.LDBGetText(LDBString, Number(this.m_QuestID));
+				else {
+					var questID;
+					if (factionMission == "Rogue"){
+						switch(LDBString){
+							case "QuestTaskSolvedTemplar":
+								text = LDBFormat.LDBGetText(50303, 19005);
+								break
+							case "QuestTaskSolvedIlluminati":
+								text = LDBFormat.LDBGetText(50303, 19007);
+								break
+							case "QuestTaskSolvedDragon":
+								text = LDBFormat.LDBGetText(50303, 19006);
+								break
+						}
+					}
+					if (factionMission == "Darkness"){
+						switch(LDBString){
+							case "QuestTaskSolvedTemplar":
+								text = LDBFormat.LDBGetText(50303, 18405);
+								break
+							case "QuestTaskSolvedIlluminati":
+								text = LDBFormat.LDBGetText(50303, 19007);
+								break
+							case "QuestTaskSolvedDragon":
+								text = LDBFormat.LDBGetText(50303, 18452);
+								break
+						}
+					}
+				}
 				if (text == Agent.NoNetworkText){
 					// checks if player has unlocked the mission reports yet
 					var NetworkTest = QuestsBase.GetSolvedTextForQuest(QuestsBase.GetMainQuestIDByQuestID(21498), 21498);
 					var unlocked:Boolean;
-					if (Agent.NoNetworkText == NetworkTest) unlocked = false;
-					else if (!NetworkTest) unlocked = false;
+					if (Agent.NoNetworkText == NetworkTest || !NetworkTest) unlocked = false;
 					else unlocked = true;
 					// fetch the real report if unlocked
 					if(unlocked){
@@ -172,7 +214,7 @@ class com.fox.DoubleAgent.Agent {
 				var root:XMLNode = XMLFile.childNodes[0];
 				var data:Archive = new Archive();
 				for (var i:Number = 0; i < root.childNodes.length; i++ ) {
-					data.AddEntry(root.childNodes[i].attributes.qID, root.childNodes[i].attributes.tID);
+					data.AddEntry(root.childNodes[i].attributes.q, root.childNodes[i].attributes.t);
 				}
 				DistributedValueBase.SetDValue("DoubleAgent_" + filename, data);
 			}

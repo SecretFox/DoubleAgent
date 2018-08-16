@@ -12,16 +12,19 @@ import com.fox.DoubleAgent.MissionIDs;
 import mx.utils.Delegate;
 
 
-// Replaces the Agent.as in project files
+// Replaces the Agent.as in project files, also requires MissionIDs.as to be imported
+// for non english clients solvedText check in the Export function may need to be replaced
 // "Done" will be printed out in the system channel once done
 // Afterwards run ExtractFromClientlog.py and then jsonToXML.py
 // json files are for processing the data and .xml files are needed by the mod
+// if replacing the .xml files while in game it's necessary to run commands /option DoubleAgent_Faction false and /option DoubleAgent_Shared false to reload the changes
+// this is because the .xml files are only loaded if  distributedvalue does not have valuet yet( to reduce loading times).
+
 class com.fox.DoubleAgent.Agent {
 	static var SharedID:Array;
 	static var LumieID:Array;
 	static var DragonID:Array;
 	static var TemplarID:Array;
-	//had to separate these into new class,as it exceededs 32KB limit
 	static var appy:MissionIDs;
 
 	public static function main(swfRoot:MovieClip):Void {
@@ -45,7 +48,7 @@ class com.fox.DoubleAgent.Agent {
 	
 	public static function Importer() {
 		
-		
+		//had to separate these into new class,as the exceeded 32KB limit
 		LogBase.Warning("Agent", "Starting Export");
 		ExportIDs();
 	}
