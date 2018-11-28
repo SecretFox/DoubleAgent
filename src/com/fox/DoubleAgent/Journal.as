@@ -10,6 +10,7 @@ import com.Utils.Archive;
 import com.Utils.Colors;
 import com.Utils.LDBFormat;
 import com.Utils.Text;
+import com.fox.DoubleAgent.Agent;
 import mx.utils.Delegate;
 
 class com.fox.DoubleAgent.Journal {
@@ -96,6 +97,7 @@ class com.fox.DoubleAgent.Journal {
 				rewardObject.m_Rewards.push(reward[y]);
 			}
 		}
+		
 		// This doesn't appear to work. Maybe becasue i have already completed the quests so i can't get optional rewards anymore?
 		var temp2 = quest.m_OptionalRewards;
 		for (var i in temp2) {
@@ -113,26 +115,28 @@ class com.fox.DoubleAgent.Journal {
 	private function UpdateData(TierID) {
 		for (var i:Number = 0 ; i <_root.missionrewardcontroller.m_RewardWindows.length; i++) {
 			if (_root.missionrewardcontroller.m_RewardWindows[i].GetContent().GetID() == TierID || TierID == -1) {
-				if (!_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text){
+				if (!_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text) {
+					// if mission is paused missionReportWindow is unable to find the m_MissionDescription text,
+					// so we have manually get it
 					var qID = QuestsBase.GetMainQuestIDByQuestID(TaskID);
-					// this one is called by the missionreport window, but has the same problem as the questID function
-					// var text = com.GameInterface.Quests.GetSolvedTextForQuest(qID,TierID);
 					var text:String;
 					var m_Character = Character.GetClientCharacter();
 					var m_Faction = m_Character.GetStat( _global.Enums.Stat.e_PlayerFaction );
 					var m_quest = QuestsBase.GetQuest(qID, false, true);
 					switch (m_Faction) {
 						case _global.Enums.Factions.e_FactionDragon:
-							text = LDBFormat.LDBGetText("QuestTaskSolvedDragon", Number(TierID));
+							text = Agent.GetMissionRewardText("QuestTaskSolvedDragon", qID, TierID);
 							break
 						case _global.Enums.Factions.e_FactionIlluminati:
-							text = LDBFormat.LDBGetText("QuestTaskSolvedIlluminati", Number(TierID));
+							text = Agent.GetMissionRewardText("QuestTaskSolvedIlluminati", qID, TierID);
 							break
 						case _global.Enums.Factions.e_FactionTemplar:
-							text = LDBFormat.LDBGetText("QuestTaskSolvedTemplar", Number(TierID));
+							text = Agent.GetMissionRewardText("QuestTaskSolvedTemplar", qID, TierID);
 							break
 					}
-					if(!text)text = LDBFormat.LDBGetText("QuestTaskSolved", Number(TierID));
+					// This check only needs to be performed when creating the report window from paused quests.
+					// There's also no need to recheck when it when hitting the change faction button, since these are shared and the text will already be set
+					if(!text) text = LDBFormat.LDBGetText("QuestTaskSolved", Number(TierID));
 					_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_MissionDescription.text = text;
 					_root.missionrewardcontroller.m_RewardWindows[i].m_Content.m_SubjectText.text = m_quest.m_MissionName;
 					_root.missionrewardcontroller.m_RewardWindows[i].SetSize( 610, 250 );
@@ -163,11 +167,11 @@ class com.fox.DoubleAgent.Journal {
 			_root.missionrewardcontroller.m_RewardWindows.push(missionReward);
 			_root.missionrewardcontroller.m_RewardWindows[_root.missionrewardcontroller.m_RewardWindows.length - 1].ShowStroke( true )
 			var character:Character = Character.GetClientCharacter();
-			if (character != undefined) { character.AddEffectPackage( "sound_fxpackage_GUI_send_report.xml" ); }
+			character.AddEffectPackage( "sound_fxpackage_GUI_send_report.xml");
 			UpdateData(data.m_QuestTaskID);
 		} else {
 			var name = QuestsBase.GetQuest(m_JournalClip.m_Window.m_Content.m_ExpandedMissionID, false, true).m_MissionName;
-			if (name) UtilsBase.PrintChatText("Unable to find mission report for " +name);
+			if (name) UtilsBase.PrintChatText("Unable to find mission report for " + name);
 		}
 	}
 }
